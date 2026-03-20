@@ -146,9 +146,9 @@ Never delete historical content.
 
 If required section is missing data:
 
-Insert placeholder:
-
-> [REQUIRES CLARIFICATION]
+- Ask clarifying questions one at a time
+- Use multiple choice
+- allow user to insert their own answer
 
 Do not invent content.
 
