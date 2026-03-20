@@ -54,7 +54,7 @@ UI/UX Design Progress:
 - [ ] Step 5: Define buttons and actions
 - [ ] Step 6: Suggest symbol glyphs
 - [ ] Step 7: Generate final UI/UX PRD draft
-- [ ] Step 8: Write file to `/frontend/ui-ux-prd.md`
+- [ ] Step 8: Write file to `/frontend/ui-ux-design drafts/ui-ux-draft.md`
 
 ---
 
@@ -144,6 +144,8 @@ List each section clearly.
 - Error state
 - Success state
 
+### Map Features to page
+
 ---
 
 # Step 5 — Buttons and Function Assignments
@@ -207,7 +209,7 @@ All pages must be deterministic and implementation-ready.
 
 Write file to:
 
-/frontend/ui-ux-prd.md
+`/frontend/ui-ux design drafts/ui-ux-draft.md`
 
 If folder does not exist:
 - Create it.
