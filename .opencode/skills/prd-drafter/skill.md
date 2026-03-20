@@ -1,181 +1,182 @@
 ---
-name: prd-drafter
-description: Generates or updates a structured Product Requirements Document by extracting structured information from the current context window. Use when converting conversations, ideas, or feature discussions into a formal PRD draft. If the target file exists, append and refine instead of overwriting.
+name: dynamic-drafting-prd
+description: Generates or updates a dynamic PRD based on context and routes the output to the appropriate folder such as /frontend or /backend. Use when converting evolving discussions into structured implementation-ready PRDs.
 compatibility: opencode
 metadata:
   domain: product
-  workflow: prd-generation
+  workflow: dynamic-prd-routing
   output: prd-draft
 ---
 
-# Drafting PRD From Context
+# Drafting Dynamic PRD
 
 ## Purpose
 
-This skill transforms existing conversation context into a structured, detailed PRD.
+This skill converts current context into a structured PRD and dynamically routes it to the correct system folder based on:
 
-It:
+- Product layer (frontend, backend, infra, full-stack)
+- Explicit user path instruction
+- Contextual signals
 
-- Extracts product intent from current context
-- Structures information into a formal PRD format
-- Creates the PRD file if it does not exist
-- Updates and expands the PRD if it already exists
-- Never deletes prior content unless explicitly instructed
+It creates the file if it does not exist.
+It updates and expands it if it already exists.
+It never overwrites unless explicitly instructed.
 
 ---
 
 # Core Rules
 
-1. Do not invent product details.
-2. Only use information present in context.
-3. If information is missing, create a clearly marked placeholder section.
-4. If updating an existing PRD, preserve previous structure.
-5. Add new information into appropriate sections.
-6. Maintain consistent formatting across updates.
+1. Never fabricate missing product information.
+2. Detect PRD type before writing.
+3. If folder not specified, ask one clarifying question.
+4. Preserve existing content when updating.
+5. Append intelligently, not blindly.
 
 ---
 
-# Workflow
+# Step 1 — Determine PRD Type
 
-Copy this checklist and track progress:
+Analyze context and classify:
 
-PRD Draft Progress:
-- [ ] Step 1: Extract product signals from context
-- [ ] Step 2: Identify MVP scope
-- [ ] Step 3: Define core features
-- [ ] Step 4: Define user personas (if available)
-- [ ] Step 5: Define technical constraints (if mentioned)
-- [ ] Step 6: Generate structured PRD
-- [ ] Step 7: Write or update file
+- Frontend PRD → UI, UX, layout, navigation, components
+- Backend PRD → database, API, services, architecture
+- Full System PRD → both layers
+- Infrastructure PRD → deployment, hosting, scaling
 
----
+If unclear:
+Ask:
+"Is this PRD intended for frontend, backend, or full system?"
 
-# Step 1 — Extract From Context
-
-Scan current context window and identify:
-
-- Product concept
-- Problem statement
-- Target user
-- Features mentioned
-- Constraints
-- Integrations
-- Technical stack references
-- Monetization model (if any)
-- Success metrics (if any)
-
-Do not guess missing items.
+Do not proceed without clarity.
 
 ---
 
-# Step 2 — Determine PRD Target Path
+# Step 2 — Determine File Path
 
-If user specifies a path:
-- Use that path.
+Routing logic:
 
-If not specified:
-- Default to `/docs/prd-draft.md`
+If user explicitly states:
+- /frontend → use that
+- /backend → use that
+- custom path → use that
+
+If no path given:
+
+Frontend PRD → `/frontend/prd-draft.md`  
+Backend PRD → `/backend/prd-draft.md`  
+Full system PRD → `/docs/prd-draft.md`  
+
+If folder does not exist:
+Create it.
+
+---
+
+# Step 3 — Adaptive PRD Template
+
+Template adjusts based on PRD type.
+
+---
+
+## If Frontend PRD
+
+# Product Requirements Document — Frontend
+
+## 1. Visual Objectives
+## 2. Page Architecture
+## 3. Component Inventory
+## 4. Interaction Design
+## 5. Navigation Model
+## 6. State Management (UI)
+## 7. Accessibility Standards
+## 8. Design Constraints
+## 9. Open Questions
+
+---
+
+## If Backend PRD
+
+# Product Requirements Document — Backend
+
+## 1. System Overview
+## 2. Service Architecture
+## 3. Database Design
+## 4. API Specifications
+## 5. Data Flow
+## 6. Security Requirements
+## 7. Performance Requirements
+## 8. Scalability Plan
+## 9. Open Questions
+
+---
+
+## If Full System PRD
+
+Use combined structure:
+
+Frontend Section
+Backend Section
+Integration Layer
+Deployment Considerations
+
+---
+
+# Step 4 — Updating Logic
 
 If file exists:
+
 - Read file
-- Merge new information
-- Append to relevant sections
+- Detect existing sections
+- Insert new information in correct section
+- Avoid duplication
+- Add:
 
-If file does not exist:
-- Create it
+### Revision Log
+- Date
+- What changed
+- Why
 
----
+If section does not exist:
+Create it.
 
-# Step 3 — PRD Structure Template
-
-Always use this structure:
-
-# Product Requirements Document
-
-## 1. Executive Summary
-Clear high-level description of product.
-
-## 2. Problem Statement
-What problem is being solved.
-
-## 3. Goals and Objectives
-Primary measurable goals.
-
-## 4. Target Users
-Defined personas (if available).
-
-## 5. Core Features
-List of features grouped by:
-- Must Have
-- Should Have
-- Nice to Have
-
-## 6. User Flows
-High-level journey descriptions.
-
-## 7. Technical Considerations
-Stack, integrations, data requirements.
-
-## 8. Non-Functional Requirements
-Performance, reliability, scalability.
-
-## 9. Success Metrics
-KPIs or measurable indicators.
-
-## 10. Open Questions
-Items requiring clarification.
+Never delete historical content.
 
 ---
 
-# Updating Logic
+# Step 5 — Missing Information Handling
 
-If updating an existing PRD:
+If required section is missing data:
 
-- Do not duplicate sections.
-- Insert new content into correct section.
-- If new feature introduced, add to feature list.
-- If scope changes, update Goals section.
-- If conflicts detected, create:
-  
-  ### Revision Notes
-  - Describe change
-  - Mark previous assumption
+Insert placeholder:
+
+> [REQUIRES CLARIFICATION]
+
+Do not invent content.
 
 ---
 
-# Formatting Rules
+# Step 6 — Output Confirmation
 
-- Use consistent markdown hierarchy.
-- Use bullet lists for features.
-- Use numbered sections only at top level.
-- Maintain clean spacing.
-- Do not add commentary outside PRD.
-
----
-
-# Output Behavior
-
-After writing or updating:
+After writing:
 
 Return:
 
-1. File path
-2. Whether file was created or updated
-3. Sections modified
-4. Any missing required sections
+1. PRD Type detected
+2. File path used
+3. Created or Updated
+4. Sections modified
+5. Missing required sections
 
 ---
 
-# Constraints
+# Safety Constraints
 
 NEVER:
-- Overwrite full file unless explicitly requested
-- Remove existing content silently
-- Assume business model
-- Assume metrics
-- Fill missing sections with fabricated detail
+- Merge frontend/backend logic incorrectly
+- Write to incorrect layer folder
+- Assume deployment environment
+- Overwrite full document silently
 
 ALWAYS:
-- Preserve historical draft content
-- Expand iteratively
+- Maintain deterministic structure
 - Keep PRD implementation-ready
+- Preserve evolution across iterations
