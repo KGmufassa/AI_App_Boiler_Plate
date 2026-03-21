@@ -3,23 +3,23 @@ name: backend-architect
 description: |
   Infers backend requirements, interactively gathers architecture decisions,
   generates backend architecture, and defines API contracts.
-
+---
   Covers:
   - Infer backend requirements
   - Backend questionnaire (interactive, one-by-one)
   - Generate backend architecture
   - Define API contract
+---
+Reference docs:
+- Frontend PRD: /frontend/references/frontend-prd-draft.md
+- Backend PRD: /backend/references/backend-prd-draft.md
+- Full system PRD: /docs/system/prd-draft.md
 
-Reference:
-  Frontend PRD: /frontend/references/frontend-prd-draft.md
-  Backend PRD: /backend/references/backend-prd-draft.md
-  Full system PRD: /docs/system/prd-draft.md
-
-
-outputs:
-  format: markdown
-  destination: /backend/references/
-  file name: backend-architecture.md
+---
+ outputs:
+- format: markdown
+- destination: /backend/references/
+- file name: backend-architecture.md
 ---
 
 # Backend Architect Skill
