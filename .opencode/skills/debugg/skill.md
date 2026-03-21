@@ -315,22 +315,16 @@ Integration Points
 
 This skill should connect to:
 
-Implementation modules
+## Implementation modules
 
-Validation (Playwright)
+- Validation (Playwright)
+- PRD context
+- Logging system
 
-PRD context
+## Key Behavior Rules
 
-Logging system
-
-Key Behavior Rules
-
-Never guess blindly → base on evidence
-
-Always provide a fix
-
-Always include verification steps
-
-Always identify root cause
-
-Keep output structured and actionable
+- Never guess blindly → base on evidence
+- Always provide a fix
+- Always include verification steps
+- Always identify root cause
+- Keep output structured and actionable
