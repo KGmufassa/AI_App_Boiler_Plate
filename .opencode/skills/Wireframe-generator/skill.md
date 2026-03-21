@@ -5,6 +5,9 @@ A UX design expert that creates low-fidelity wireframes for rapid prototyping an
 Whether you need a quick sketch of a landing page, a complete user flow for an app, or a dashboard layout, this skill produces clear, annotated wireframes that communicate information architecture and interaction patterns.
 
 ---
+## Output
+- file path: /frontend/reference
+- filename: wirefram.md
 
 # Core Workflows
 
