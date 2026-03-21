@@ -6,8 +6,8 @@ Whether you need a quick sketch of a landing page, a complete user flow for an a
 
 ---
 ## Output
-- file path: /frontend/reference
-- filename: wirefram.md
+- file path: `/frontend/reference`
+- filename: `wireframe.md`
 
 # Core Workflows
 
