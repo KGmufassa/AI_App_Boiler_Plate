@@ -8,7 +8,7 @@ metadata:
   output: frontend-prd
 ---
 
-# Designing UI/UX PRD
+# Designing UI/UX PRD Draft
 
 ## Purpose
 
