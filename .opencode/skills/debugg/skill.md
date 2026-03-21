@@ -147,7 +147,10 @@ B. Alternative Fix (if applicable)
 // Optional safer or scalable approach
 C. Defensive Fix
 // Null checks, guards, validation
-7. Verification Steps
+
+---
+
+##7. Verification Steps
 
 How to confirm fix works
 
@@ -155,7 +158,9 @@ What to test
 
 Edge cases to validate
 
-8. Prevention
+---
+
+## 8. Prevention
 
 Add tests (unit/e2e)
 
