@@ -5,31 +5,21 @@ description: |
   generates backend architecture, and defines API contracts.
 
   Covers:
-  - Step 4: Infer backend requirements
-  - Step 6: Backend questionnaire (interactive, one-by-one)
-  - Step 8: Generate backend architecture
-  - Step 9: Define API contract
+  - Infer backend requirements
+  - Backend questionnaire (interactive, one-by-one)
+  - Generate backend architecture
+  - Define API contract
 
-metadata:
-  version: "1.3.0"
-  category: architecture
-  priority: high
-  compatibility: opencode
+Reference:
+  Frontend PRD: /frontend/references/frontend-prd-draft.md
+  Backend PRD: /backend/references/backend-prd-draft.md
+  Full system PRD: /docs/system/prd-draft.md
 
-inputs:
-  prd:
-    type: string
-    required: true
-  frontend_architecture:
-    type: string
-    required: true
-  design_spec:
-    type: string
-    required: false
 
 outputs:
   format: markdown
-  destination: /backend
+  destination: /backend/references/
+  file name: backend-architecture.md
 ---
 
 # Backend Architect Skill
@@ -52,9 +42,9 @@ You are responsible for deriving backend requirements and designing the backend 
 
 ## Step 4 — Infer Backend Requirements
 Analyze:
-- PRD
-- Frontend architecture
-- Design spec (if available)
+- frontend-prd-draft.md
+- backend-prd-draft.md
+- system/prd-draft.md
 
 Identify:
 - Authentication system needs
