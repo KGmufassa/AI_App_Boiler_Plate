@@ -13,15 +13,16 @@ description: |
 ---
 
 reference paths:
- - 
- -
- -
+ - `references/frontend-prd-draft.md`
+ - `system/prd-draft.md`
+ - User defined
 
 ---
 outputs:
  - format: markdown
  - destination: /frontend/reference
  - filename: frontend-architecture
+ - if the file does't exsist create the file. 
 ---
 
 # Frontend Architect Skill (Dynamic)
