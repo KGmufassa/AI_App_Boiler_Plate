@@ -46,7 +46,7 @@ If updating an existing wireframe file → `update` mode
 
 ---
 
-# Step 0 — File Ingestion (Interpret-File Mode)
+# Step 1 — File Ingestion (Interpret-File Mode)
 
 If a file path is provided:
 
@@ -71,7 +71,7 @@ Do not proceed to layout until clarified.
 
 ---
 
-# Step 1 — Workflow Detection
+# Step 2 — Workflow Detection
 
 Auto-detect workflow type:
 
@@ -86,7 +86,7 @@ Ask:
 
 ---
 
-# Step 2 — Page Architecture Engine
+# Step 3 — Page Architecture Engine
 
 Determine:
 
@@ -108,7 +108,7 @@ Do not create wireframes yet.
 
 ---
 
-# Step 3 — Structural Validation Pass
+# Step 4 — Structural Validation Pass
 
 Before wireframing, confirm:
 
@@ -122,7 +122,7 @@ Ask one missing item at a time.
 
 ---
 
-# Step 4 — Wireframe Construction
+# Step 5 — Wireframe Construction
 
 For each page:
 
@@ -216,7 +216,7 @@ No page may omit states.
 
 ---
 
-# Step 5 — Flow Connections
+# Step 6 — Flow Connections
 
 Define transitions between pages:
 
@@ -231,7 +231,7 @@ All paths must terminate.
 
 ---
 
-# Step 6 — Output Structure
+# Step 7 — Output Structure
 
 Write files to:
 
