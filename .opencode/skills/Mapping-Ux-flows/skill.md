@@ -177,8 +177,8 @@ Every multi-step interaction must be defined as a linear chain.
 
 Create:
 
-/flows/overview.md  
-/flows/pages/[page-name].md  
+docs/Frontend/ui-ux-design/ux-flows/overview.md  
+docs/Frontend/ui-ux-design/ux-flows/pages/[page-name].md  
 
 If folder does not exist:
 Create it.
