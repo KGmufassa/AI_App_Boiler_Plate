@@ -1,11 +1,6 @@
 ---
 name: defining-tech-stack
 description: Ingests a draft MVP PRD and frontend blueprint to determine and confirm the appropriate backend and supporting technologies. Asks qualifying questions one at a time to remove ambiguity before outputting a finalized stack-definition.md file.
-compatibility: opencode
-metadata:
-  domain: architecture
-  workflow: stack-selection
-  output: stack-definition
 ---
 
 # Defining Tech Stack
