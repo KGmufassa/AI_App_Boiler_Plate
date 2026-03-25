@@ -233,7 +233,7 @@ Ensure the document now contains:
 
 Write the structured document to:
 
-docs/reference/prd-draft.md
+docs/system/reference/prd-draft.md
 
 Create directory if missing.
 
@@ -252,7 +252,7 @@ PRD draft generated from brainstorm session.
 
 Update the following file:
 
-docs/reference/project-state.md
+docs/system/reference/project-state.md
 
 Modify:
 
