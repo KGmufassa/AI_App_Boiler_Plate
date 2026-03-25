@@ -59,7 +59,7 @@ If no path given:
 
 Frontend PRD → `/frontend/references/frontend-prd-draft.md`  
 Backend PRD → `/backend/references/backend-prd-draft.md`  
-Full system PRD → `/docs/system/prd-draft.md`  
+Full system PRD → `/docs/system/references/prd-draft.md`  
 
 If folder does not exist:
 Create it.
