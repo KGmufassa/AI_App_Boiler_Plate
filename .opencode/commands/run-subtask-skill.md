@@ -1,5 +1,5 @@
 ---
-name: execute-skill
+name: run-subtask-skill
 description: |
   Dynamically executes a specified skill as a subtask. Acts as a universal dispatcher
   that allows agents to invoke any registered skill with arguments in a controlled,
