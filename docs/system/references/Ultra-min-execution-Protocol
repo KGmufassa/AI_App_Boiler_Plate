@@ -6,7 +6,7 @@ Define the minimum required structure for consistent task execution and skill ch
 ---
 
 ## CORE STRUCTURE
-
+```
 {
   "task_id": "",
   "status": "pending | running | completed | failed",
@@ -15,7 +15,7 @@ Define the minimum required structure for consistent task execution and skill ch
   "output": {},
   "error": null
 }
-
+```
 ---
 
 ## RULES
@@ -31,12 +31,12 @@ Define the minimum required structure for consistent task execution and skill ch
 ## MULTI-SKILL CHAINING
 
 Each step receives:
-
+```
 {
   "previous_output": {},
   "current_input": {}
 }
-
+```
 RULE:
 - previous_output becomes input for next skill
 
@@ -45,28 +45,28 @@ RULE:
 ## CONTROLLED EXECUTION (REQUIRED)
 
 run-subtask-skill.md must receive:
-
+```
 {
   "skills": [],
   "execution_order": [],
   "context": "isolated"
 }
-
+```
 ---
 
 ## PARALLEL TASKS
-
+```
 {
   "parallel_tasks": [
     {"task_id": ""},
     {"task_id": ""}
   ]
 }
-
+```
 ---
 
 ## ERROR HANDLING
-
+```
 {
   "status": "failed",
   "error": {
@@ -74,16 +74,16 @@ run-subtask-skill.md must receive:
     "recoverable": true
   }
 }
-
+```
 ---
 
 ## COMPLETION
-
+```
 {
   "status": "completed",
   "output": {}
 }
-
+```
 ---
 
 ## END
