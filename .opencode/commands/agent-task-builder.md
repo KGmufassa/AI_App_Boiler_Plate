@@ -56,8 +56,8 @@ Your job is to:
 
 Convert all tasks into:
 
-[FORMAT]
-```
+```[FORMAT]
+
 {
   "task_id": "t1",
   "description": ""
