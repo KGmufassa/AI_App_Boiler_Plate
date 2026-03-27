@@ -107,7 +107,7 @@ Return result exactly as produced by the skill.
 
 Example Usage
 ```
-runCommand("execute-skill", {
+runCommand("run-subtask-skill", {
   skill: "test-driven-development",
   args: {
     feature: "user login"
