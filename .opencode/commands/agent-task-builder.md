@@ -3,7 +3,7 @@ name: agent-task-builder
 description: Ingest a task list or implementation plan, analyze available skills, construct the optimal bounded agent, and execute assigned skills via run-subtask-skill when subtask execution is required.
 ---
 
-# /construct-agent
+# agent-tasks-builder
 
 ## Purpose
 
