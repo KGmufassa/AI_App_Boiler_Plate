@@ -398,5 +398,79 @@ You MUST return ONLY:
 - ALWAYS enforce execution order
 
 ---
+## STEP 19: REPORT GENERATION (MANDATORY)
 
+You MUST generate TWO report artifacts:
+
+---
+
+### MACHINE-READABLE REPORT
+
+FILE: agent-build-report.json
+
+{
+  "agent_config": {},
+  "execution_plan": [],
+  "subagents": [],
+  "task_routing": {},
+  "diagnostics": {
+    "scores": {},
+    "decisions": []
+  }
+}
+
+---
+
+## HUMAN-READABLE REPORT
+
+FILE: agent-build-report.md
+
+### Agent Build Report
+
+#### Primary Agent
+- Name:
+- Mode:
+- Model:
+
+---
+
+### Subagents Created
+
+#### [Subagent Name]
+- Skills:
+  - skill_1
+  - skill_2
+
+---
+
+### Execution Plan
+
+#### Task: [task name]
+- Execution: inline | subagent
+- Mode: controlled | flexible
+
+---
+
+### Diagnostics
+- Key decisions
+- Scores
+
+---
+
+# STEP 20: FINAL OUTPUT (MANDATORY)
+
+You MUST return ONLY:
+```
+{
+  "agent_config": {},
+  "execution_plan": [],
+  "subagents": [],
+  "task_routing": {},
+  "diagnostics": {},
+  "reports": {
+    "json": "agent-build-report.json",
+    "markdown": "agent-build-report.md"
+  }
+}
+```
 ## END COMMAND
