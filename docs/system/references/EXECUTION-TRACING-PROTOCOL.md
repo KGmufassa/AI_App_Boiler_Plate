@@ -6,7 +6,7 @@ Provide complete visibility, traceability, and replay capability for all agent, 
 ---
 
 ## CORE STRUCTURE
-
+```
 {
   "task_id": "",
   "execution_id": "",
@@ -25,13 +25,13 @@ Provide complete visibility, traceability, and replay capability for all agent, 
   "metrics": {},
   "trace": []
 }
-
+```
 ---
 
 ## TRACE ENTRY STRUCTURE
 
 Each step in execution:
-
+```
 {
   "step_id": "",
   "skill": "",
@@ -40,7 +40,7 @@ Each step in execution:
   "status": "",
   "timestamp": ""
 }
-
+```
 ---
 
 ## RULES
@@ -54,7 +54,7 @@ Each step in execution:
 ---
 
 ## MULTI-SKILL PIPELINE
-
+```
 {
   "skill_bundle": [],
   "execution_order": [],
@@ -68,7 +68,7 @@ Each step in execution:
     }
   ]
 }
-
+```
 ---
 
 ## DATA FLOW
@@ -82,7 +82,7 @@ Each step MUST:
 ---
 
 ## PARALLEL EXECUTION TRACKING
-
+```
 {
   "parallel_group_id": "",
   "tasks": [
@@ -92,11 +92,11 @@ Each step MUST:
     }
   ]
 }
-
+```
 ---
 
 ## ERROR HANDLING
-
+```
 {
   "status": "failed",
   "error": {
@@ -107,11 +107,11 @@ Each step MUST:
   },
   "recovery_action": ""
 }
-
+```
 ---
 
 ## LOGGING SYSTEM
-
+```
 {
   "logs": [
     {
@@ -121,11 +121,11 @@ Each step MUST:
     }
   ]
 }
-
+```
 ---
 
 ## METRICS
-
+```
 {
   "metrics": {
     "execution_time_ms": 0,
@@ -133,25 +133,25 @@ Each step MUST:
     "success_rate": 0
   }
 }
-
+```
 ---
 
 ## REPLAY CAPABILITY
 
 To replay execution:
-
+```
 {
   "execution_id": "",
   "replay": true
 }
-
+```
 RULE:
 - system must re-run steps using trace[]
 
 ---
 
 ## AUDIT TRAIL
-
+```
 {
   "audit": {
     "created_by": "agent",
@@ -159,17 +159,17 @@ RULE:
     "version": ""
   }
 }
-
+```
 ---
 
 ## COMPLETION
-
+```
 {
   "status": "completed",
   "output": {},
   "metrics": {}
 }
-
+```
 ---
 
 ## END
