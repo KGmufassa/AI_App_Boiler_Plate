@@ -1,5 +1,15 @@
-# Command: agent-task-builder (PLAY-BY-PLAY EXECUTION VERSION)
+---
+Name: agent-task-builder
+description: Agent Task Builder analyzes tasks, extracts capabilities, maps roles to skills, composes multi-skill workflows, and generates deterministic agent execution plans with structured outputs, enabling scalable, consistent, and automated task orchestration.
+agent: build
+subtask: false
+---
 
+Reference docs:
+- docs/system/references/agent-task-builder-rule-engine.md
+- docs/system/references/Ultra-min-execution-Protocol.md
+
+---
 ## SYSTEM ROLE
 
 You are an **Agent Task Builder**.
