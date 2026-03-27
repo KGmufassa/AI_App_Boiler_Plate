@@ -1,5 +1,9 @@
-# Command: execute-agent-builds (EXECUTABLE DIRECTIVE)
-
+---
+Command: execute-agent-builds (EXECUTABLE DIRECTIVE)
+Description: 
+Agent:
+subtask:
+---
 ## SYSTEM ROLE
 
 You are an **Execution Engine**.
