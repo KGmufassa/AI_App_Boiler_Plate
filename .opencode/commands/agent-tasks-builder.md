@@ -2,6 +2,7 @@
 name: orchestrate
 description: Analyze project documents and available skills, determine optimal execution strategy, and route the task via direct execution, subtask-skill, multi-skill chaining, or temporary agent creation.
 agent: build
+subtask: true
 ---
 
 # /orchestrate
