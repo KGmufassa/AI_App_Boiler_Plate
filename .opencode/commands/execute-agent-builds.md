@@ -1,10 +1,10 @@
 ---
-Command Name: execute-agent-builds (EXECUTABLE DIRECTIVE)
-Description: executes canonical plans from the planner, routes tasks to dynamically created agents, runs multi-skill pipelines deterministically, enforces dependencies, and produces traceable, auditable outputs with metrics, logs, and replay support.
+Name: execute-agent-builds (EXECUTABLE DIRECTIVE)
+Description: The Execute agent builds command executes canonical plans from the planner, routes tasks to dynamically created agents, runs multi-skill pipelines deterministically, enforces dependencies, and produces traceable, auditable outputs with metrics, logs, and replay support.
 Agent: Build
 subtask: false
 ---
-Reference docs: 
+Source doc: 
 - Execution-tracing-protocol.md
 
 ---
