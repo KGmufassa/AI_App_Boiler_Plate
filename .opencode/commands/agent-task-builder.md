@@ -357,11 +357,11 @@ Generate:
 
 - agent-build-report.json:
   
-        file path: system/references 
+        file path: system/references/reports/agent-build-report.json
 
 - agent-build-report.md
 
-        file pat: system/references
+        file path: system/references/reports/agent-build-report.md
 
 ---
 
