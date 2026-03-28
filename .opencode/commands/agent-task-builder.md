@@ -40,8 +40,8 @@ You MUST NOT output partial results.
 
 ## INPUT
 
-- Task list  
-- Optional skills  
+- User Defined Task list  
+- Skills resgistry: `system/references/Skill-Registry.json` 
 - Optional preferences  
 
 ---
