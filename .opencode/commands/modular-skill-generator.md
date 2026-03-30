@@ -6,10 +6,15 @@ Subtask: true
 ---
 
 
-# COMMAND: modular-skill-generator
+# COMMAND: create-modular-skill-generator
 
 ## PURPOSE
-Transform documentation into a high-proficiency skill focused on execution, decisions, and failure handling.
+Compile documentation into a modular, production-grade skill system where:
+
+- `skill.md` = routing + decision engine
+- `/references` = execution intelligence
+- Content is dynamically routed using intent (not format)
+- Security, best practices, and execution context are enforced globally
 
 ---
 
@@ -17,123 +22,414 @@ Transform documentation into a high-proficiency skill focused on execution, deci
 - skill_name: string
 - source_path: optional
 - source_type: auto | local | context7 | hybrid
-- mode: high-signal
 - min_relevance_score: 0.65
 - max_chunks_per_category: 40
 
 ---
 
-## OUTPUT
-- /skills/{skill_name}
-  - skill.md
-  - /references
-    - fundamentals.md
-    - patterns.md
-    - anti-patterns.md
-    - workflows.md
-    - decision-frameworks.md
-    - constraints.md
-    - failure-modes.md
-  - metadata.json
+## OUTPUT STRUCTURE
+```
+/skills/{skill_name}
+  skill.md
+
+  /references
+    fundamentals.md
+    patterns.md
+    anti-patterns.md
+    workflows.md
+    decision-frameworks.md
+    constraints.md
+    failure-modes.md
+
+  metadata.json
+```
+---
+
+## CORE PRINCIPLES
+
+1. NEVER store raw documentation
+2. ALWAYS synthesize into action-ready knowledge
+3. ROUTE by intent, NOT by document type
+4. EVERY entry must include execution context
+5. Security + best practices are mandatory layers
+6. skill.md contains routing ONLY
 
 ---
 
-## STEPS
+## EXECUTION PIPELINE
+
+---
 
 ### 1. RESOLVE SOURCE
 IF source_type == auto:
-  IF source_path exists → mode = local
-  ELSE → mode = context7
+  IF source_path exists → local
+  ELSE → context7
 
-IF source_type == hybrid:
-  → use both local + context7
-
----
-
-### 2. INGEST (TARGETED)
-Retrieve only content that answers:
-- how to use the system
-- how to build with it
-- what decisions matter
-- what fails
-- what limits exist
+IF hybrid:
+     → combine both
 
 ---
 
-### 3. NORMALIZE
-- Deduplicate content
-- Merge overlapping sections
-- Preserve source references
+### 2. TARGETED INGESTION
+Retrieve ONLY:
+- actionable steps
+- decisions
+- examples
+- errors
+- limits
+- configs
 
 ---
 
-### 4. RELEVANCE SCORING
+### 3. NORMALIZATION
+- Deduplicate
+- Merge overlaps
+- preserve traceability
+
+---
+
+### 4. RELEVANCE FILTER
+
 score =
   actionability
-+ example/code presence
 + decision relevance
++ example presence
 + frequency
 
-FILTER:
-- KEEP score >= min_relevance_score
-- LIMIT to max_chunks_per_category
+KEEP score >= min_relevance_score
 
 ---
 
-### 5. CLASSIFICATION
-Label each chunk as:
-- fundamental
-- pattern
-- anti-pattern
-- workflow
-- decision-framework
-- constraint
-- failure-mode
+## 5. CONTENT CHUNKING
+
+Break content into atomic units:
+
+- step
+- command
+- input/output
+- decision statement
+- error/failure
+- constraint/limit
+- explanation
 
 ---
 
-### 6. SYNTHESIS
-Transform:
-- tutorials → workflows
-- examples → patterns
-- comparisons → decisions
-- errors → failure-modes
-- limits → constraints
+## 6. INTENT EXTRACTION (CORE UPGRADE)
 
-Merge redundant entries.
-Remove low-actionability content.
+FOR each chunk:
 
----
+ASSIGN PRIMARY INTENT:
 
-### 7. GENERATE FILES
+- execute → user is trying to perform steps
+- implement → user is applying a method or API
+- decide → user must choose between options
+- limit → describes system constraints
+- fix → describes error or troubleshooting
+- understand → explains concept
+- avoid → warns against bad usage
 
-#### 7A. skill.md
-Build using:
-- patterns
-- workflows
-- decision-frameworks
-- constraints
-- failure-modes
-
-#### 7B. references/
-Populate category files using structured templates.
+ALLOW secondary intents if applicable
 
 ---
 
-### 8. VALIDATION
-Ensure coverage exists for:
-- patterns
-- workflows
-- decision-frameworks
-- failure-modes
-- constraints
+## 7. INTENT-BASED TRANSFORMATION
 
-If missing → re-query or re-process.
+**MAP intents → categories:**
+
+- execute → workflows  
+- implement → patterns  
+- decide → decision-frameworks  
+-limit → constraints  
+- fix → failure-modes  
+- understand → fundamentals  
+- avoid → anti-patterns  
 
 ---
 
-### 9. METADATA
-Generate:
-- coverage_score
-- pattern_density
-- decision_clarity_score
+## 8. CLUSTERING (CRITICAL)
+
+**GROUP chunks by:**
+- goal (deploy, run, scale)
+- decision type (X vs Y)
+- failure type
+- constraint type
+
+**MERGE:**
+- similar workflows
+- similar patterns
+- similar failures
+
+**OUTPUT:**
+- ONE workflow per goal
+- ONE pattern per method
+- ONE failure per issue type
+
+---
+
+## 9. SYNTHESIS
+
+**Transform grouped content into:**
+
+- core steps
+- variations
+- tradeoffs
+- fallback paths
+
+**REMOVE:**
+- redundancy
+- non-actionable text
+
+---
+
+## 10. EXECUTION CONTEXT ENRICHMENT
+
+**FOR EACH ENTRY ADD:**
+
+- Preconditions
+- Inputs / Outputs
+- Dependencies
+- State Impact (stateless/persistent)
+- Idempotency Notes
+- Signals to Check (logs/responses)
+- Fallback Strategy
+
+---
+
+## 11. SECURITY + BEST PRACTICE INJECTION
+
+### DETECTION
+
+**IF involves:**
+- user input
+- API calls
+- auth
+- data handling
+- environment variables
+
+→ mark security-relevant
+
+---
+
+### INJECTION
+
+**ADD:**
+
+- Security Considerations
+- Security Steps
+- Security Risk
+- Prevention
+
+**ADD:**
+
+- Recommended Default
+- Best Practice Notes
+
+---
+
+### SEVERITY
+
+**Assign:**
+- low | medium | high | critical
+
+---
+
+## 12. FILE GENERATION
+
+---
+
+### skill.md (ROUTING ENGINE)
+
+# Skill: {skill_name}
+
+## Purpose
+
+---
+
+## Table of Capabilities
+
+| Task | Decision | Go To |
+|------|----------|-------|
+| {{task}} | {{decision}} | references/{{file}}.md#{{anchor}} |
+
+---
+
+## How to Use
+
+1. Identify goal  
+2. Select decision  
+3. Follow reference  
+4. Execute  
+5. If failure → failure-modes  
+
+---
+
+## Routing
+
+- deploy → workflows  
+- decide → decision-frameworks  
+- debug → failure-modes  
+
+---
+
+## Output Requirements
+
+- decision reasoning  
+- reference link  
+- execution steps  
+- fallback  
+
+---
+
+### REFERENCES FILES (ENRICHED)
+
+---
+## Pattern: {name} {#anchor}
+
+#### patterns.md
+
+- When to Use
+- Preconditions
+- Inputs / Outputs
+- Steps
+- Variations
+- Dependencies
+- State Impact
+- Idempotency Notes
+- Tradeoffs
+- Recommended Default
+- Security Considerations
+Severity: {level}
+
+---
+
+## Workflow: {goal} {#anchor}
+
+#### workflows.md
+
+- Preconditions
+- Steps
+- Variations
+- Dependencies
+- State Impact
+- Failure Points
+- Signals to Check
+- Best Practice Notes
+- Security Steps
+- Fallback Strategy
+
+---
+
+## Decision: {name} {#anchor}
+
+#### decision-frameworks.md
+
+-  Use X When
+-  Use Y When
+- Constraints
+- Tradeoffs
+- Cost Impact
+- Time Impact
+- Security Implications
+- Default Recommendation
+- Fallback Strategy
+
+---
+
+## Constraint: {name} {#anchor}
+
+#### constraints.md
+
+- Description
+- Impact
+- Detection
+- Workarounds
+- Security Impact
+
+---
+## Failure: {issue} {#anchor}
+
+#### failure-modes.md
+
+- Cause
+- Symptoms
+- Detection
+- Signals to Check
+- Fix
+- Recovery Path
+- Prevention
+- Security Risk
+Severity: {level}
+
+---
+## Anti-Pattern: {name}
+
+#### anti-patterns.md
+
+- Description
+- Why It Fails
+- Consequences
+- Correct Approach
+- Security Risk
+Severity: {level}
+---
+## Concept: {name}
+
+#### fundamentals.md
+
+- Definition
+- Why It Matters
+- Key Properties
+
+---
+
+## 13. LINKING SYSTEM
+
+- All entries MUST include anchors
+- skill.md MUST link to references
+- references MUST cross-link:
+  - workflows ↔ patterns
+  - failures ↔ constraints
+  - decisions ↔ workflows
+
+---
+
+## 14. VALIDATION
+
+REJECT if:
+
+- missing workflows
+- missing decisions
+- missing failures
+- missing constraints
+
+ENSURE:
+
+- no duplicates
+- all entries actionable
+- execution context present
+- security present where applicable
+- fallback logic present
+
+---
+
+## 15. METADATA
+
+{
+  "skill_name": "{skill_name}",
+  "pattern_density": 0.0,
+  "decision_clarity_score": 0.0,
+  "security_coverage_score": 0.0,
+  "reliability_score": 0.0
+}
+
+---
+
+## SUCCESS CRITERIA
+
+Skill MUST:
+
+- be decision-driven
+- be execution-ready
+- be safe and secure
+- handle retries and failures
+- minimize ambiguity
