@@ -233,18 +233,18 @@ ALLOW secondary intents if applicable
 
 ---
 
-## 12. FILE GENERATION
+## 12. SKILL FILE GENERATION
 
 ---
-# Skill: {skill_name}
+### Skill: {skill_name}
 
 **File path:** `skill/{skill-name}/skill.md` (ROUTING ENGINE)
 
-## Purpose
+#### Purpose
 
 ---
 
-## Table of Capabilities
+##### Table of Capabilities
 
 | Task | Decision | Go To |
 |------|----------|-------|
@@ -252,7 +252,7 @@ ALLOW secondary intents if applicable
 
 ---
 
-## How to Use
+##### How to Use
 
 1. Identify goal  
 2. Select decision  
@@ -262,7 +262,7 @@ ALLOW secondary intents if applicable
 
 ---
 
-## Routing
+##### Routing
 
 - deploy → workflows  
 - decide → decision-frameworks  
@@ -270,7 +270,7 @@ ALLOW secondary intents if applicable
 
 ---
 
-## Output Requirements
+##### Output Requirements
 
 - decision reasoning  
 - reference link  
@@ -279,10 +279,10 @@ ALLOW secondary intents if applicable
 
 ---
 
-### REFERENCES FILES (ENRICHED)
+## REFERENCES FILES GENERATION (ENRICHED)
 
 ---
-## Pattern: {name} {#anchor}
+##### Pattern: {name} {#anchor}
 
 **File path:** `skill/{skill-name}/references/patterns.md`
 
@@ -301,7 +301,7 @@ Severity: {level}
 
 ---
 
-## Workflow: {goal} {#anchor}
+##### Workflow: {goal} {#anchor}
 
 **File path:** `skill/{skill-name}/references/workflows.md`
 
@@ -318,7 +318,7 @@ Severity: {level}
 
 ---
 
-## Decision: {name} {#anchor}
+##### Decision: {name} {#anchor}
 
 **File path:** `skill/{skill-name}/references/decision-frameworks.md`
 
@@ -334,7 +334,7 @@ Severity: {level}
 
 ---
 
-## Constraint: {name} {#anchor}
+##### Constraint: {name} {#anchor}
 
 **File path:** `skill/{skill-name}/references/constraints.md`
 
@@ -345,7 +345,7 @@ Severity: {level}
 - Security Impact
 
 ---
-## Failure: {issue} {#anchor}
+##### Failure: {issue} {#anchor}
 
 **File path:** `skill/{skill-name}/references/failure-modes.md`
 
@@ -360,7 +360,7 @@ Severity: {level}
 Severity: {level}
 
 ---
-## Anti-Pattern: {name}
+##### Anti-Pattern: {name}
 
 **File path:** `skill/{skill-name}/references/anti-patterns.md`
 
@@ -372,7 +372,7 @@ Severity: {level}
 Severity: {level}
 ---
 
-## Concept: {name}
+##### Concept: {name}
 
 **File path:** `skill/{skill-name}/references/fundamentals.md`
 
