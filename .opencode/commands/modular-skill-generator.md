@@ -282,7 +282,7 @@ ALLOW secondary intents if applicable
 ## REFERENCES FILES GENERATION (ENRICHED)
 
 ---
-##### Pattern: {name} {#anchor}
+### Pattern: {name} {#anchor}
 
 **File path:** `skill/{skill-name}/references/patterns.md`
 
@@ -301,7 +301,7 @@ Severity: {level}
 
 ---
 
-##### Workflow: {goal} {#anchor}
+### Workflow: {goal} {#anchor}
 
 **File path:** `skill/{skill-name}/references/workflows.md`
 
@@ -318,7 +318,7 @@ Severity: {level}
 
 ---
 
-##### Decision: {name} {#anchor}
+### Decision: {name} {#anchor}
 
 **File path:** `skill/{skill-name}/references/decision-frameworks.md`
 
@@ -360,7 +360,7 @@ Severity: {level}
 Severity: {level}
 
 ---
-##### Anti-Pattern: {name}
+### Anti-Pattern: {name}
 
 **File path:** `skill/{skill-name}/references/anti-patterns.md`
 
@@ -372,7 +372,7 @@ Severity: {level}
 Severity: {level}
 ---
 
-##### Concept: {name}
+### Concept: {name}
 
 **File path:** `skill/{skill-name}/references/fundamentals.md`
 
