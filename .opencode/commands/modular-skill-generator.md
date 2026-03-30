@@ -61,17 +61,19 @@ Compile documentation into a modular, production-grade skill system where:
 ---
 
 ### 1. RESOLVE SOURCE
-IF source_type == auto:
-  IF source_path exists → local
-  ELSE → context7
+- IF source_type == auto:
 
-IF hybrid:
+  - IF source_path exists → local
+
+  - ELSE → context7
+
+- IF hybrid:
      → combine both
 
 ---
 
 ### 2. TARGETED INGESTION
-Retrieve ONLY:
+**Retrieve ONLY:**
 - actionable steps
 - decisions
 - examples
@@ -90,8 +92,8 @@ Retrieve ONLY:
 
 ### 4. RELEVANCE FILTER
 
-score =
-  actionability
+**score =
+  actionability**
 + decision relevance
 + example presence
 + frequency
@@ -102,7 +104,7 @@ KEEP score >= min_relevance_score
 
 ## 5. CONTENT CHUNKING
 
-Break content into atomic units:
+**Break content into atomic units:**
 
 - step
 - command
@@ -116,7 +118,7 @@ Break content into atomic units:
 
 ## 6. INTENT EXTRACTION (CORE UPGRADE)
 
-FOR each chunk:
+**FOR each chunk:**
 
 ASSIGN PRIMARY INTENT:
 
@@ -238,7 +240,7 @@ ALLOW secondary intents if applicable
 ---
 # Skill: {skill_name}
 
-### file path: skill/{skill-name}/skill.md (ROUTING ENGINE)
+**File path:** `skill/{skill-name}/skill.md` (ROUTING ENGINE)
 
 ## Purpose
 
@@ -284,7 +286,7 @@ ALLOW secondary intents if applicable
 ---
 ## Pattern: {name} {#anchor}
 
-#### File path: skill/{skill-name}/references/patterns.md
+**File path:** `skill/{skill-name}/references/patterns.md`
 
 - When to Use
 - Preconditions
@@ -303,7 +305,7 @@ Severity: {level}
 
 ## Workflow: {goal} {#anchor}
 
-#### File path: skill/{skill-name}/references/workflows.md
+**File path:** `skill/{skill-name}/references/workflows.md`
 
 - Preconditions
 - Steps
@@ -320,7 +322,7 @@ Severity: {level}
 
 ## Decision: {name} {#anchor}
 
-#### File path: skill/{skill-name}/references/decision-frameworks.md
+**File path:** `skill/{skill-name}/references/decision-frameworks.md`
 
 -  Use X When
 -  Use Y When
@@ -336,7 +338,7 @@ Severity: {level}
 
 ## Constraint: {name} {#anchor}
 
-#### File path: skill/{skill-name}/references/constraints.md
+**File path:** `skill/{skill-name}/references/constraints.md`
 
 - Description
 - Impact
@@ -347,7 +349,7 @@ Severity: {level}
 ---
 ## Failure: {issue} {#anchor}
 
-#### File path: skill/{skill-name}/references/failure-modes.md
+**File path:** `skill/{skill-name}/references/failure-modes.md`
 
 - Cause
 - Symptoms
@@ -362,7 +364,7 @@ Severity: {level}
 ---
 ## Anti-Pattern: {name}
 
-#### File path: skill/{skill-name}/references/anti-patterns.md
+**File path:** `skill/{skill-name}/references/anti-patterns.md`
 
 - Description
 - Why It Fails
@@ -371,9 +373,10 @@ Severity: {level}
 - Security Risk
 Severity: {level}
 ---
-## File path: skill/{skill-name}/references/Concept: {name}
 
-#### File path: skill/{skill-name}/references/fundamentals.md
+## Concept: {name}
+
+**File path:** `skill/{skill-name}/references/fundamentals.md`
 
 - Definition
 - Why It Matters
@@ -394,14 +397,14 @@ Severity: {level}
 
 ## 14. VALIDATION
 
-REJECT if:
+**REJECT if:**
 
 - missing workflows
 - missing decisions
 - missing failures
 - missing constraints
 
-ENSURE:
+**ENSURE:**
 
 - no duplicates
 - all entries actionable
@@ -412,7 +415,7 @@ ENSURE:
 ---
 
 ## 15. METADATA
-
+```
 {
   "skill_name": "{skill_name}",
   "pattern_density": 0.0,
@@ -420,12 +423,12 @@ ENSURE:
   "security_coverage_score": 0.0,
   "reliability_score": 0.0
 }
-
+```
 ---
 
 ## SUCCESS CRITERIA
 
-Skill MUST:
+**Skill MUST:**
 
 - be decision-driven
 - be execution-ready
