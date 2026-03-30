@@ -236,10 +236,9 @@ ALLOW secondary intents if applicable
 ## 12. FILE GENERATION
 
 ---
+# Skill: {skill_name}
 
 ### skill.md (ROUTING ENGINE)
-
-# Skill: {skill_name}
 
 ## Purpose
 
