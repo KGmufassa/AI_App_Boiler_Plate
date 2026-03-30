@@ -238,7 +238,7 @@ ALLOW secondary intents if applicable
 ---
 # Skill: {skill_name}
 
-### skill.md (ROUTING ENGINE)
+### file path: skill/{skill-name}/skill.md (ROUTING ENGINE)
 
 ## Purpose
 
@@ -284,7 +284,7 @@ ALLOW secondary intents if applicable
 ---
 ## Pattern: {name} {#anchor}
 
-#### patterns.md
+#### File path: skill/{skill-name}/references/patterns.md
 
 - When to Use
 - Preconditions
@@ -303,7 +303,7 @@ Severity: {level}
 
 ## Workflow: {goal} {#anchor}
 
-#### workflows.md
+#### File path: skill/{skill-name}/references/workflows.md
 
 - Preconditions
 - Steps
@@ -320,7 +320,7 @@ Severity: {level}
 
 ## Decision: {name} {#anchor}
 
-#### decision-frameworks.md
+#### File path: skill/{skill-name}/references/decision-frameworks.md
 
 -  Use X When
 -  Use Y When
@@ -336,7 +336,7 @@ Severity: {level}
 
 ## Constraint: {name} {#anchor}
 
-#### constraints.md
+#### File path: skill/{skill-name}/references/constraints.md
 
 - Description
 - Impact
@@ -347,7 +347,7 @@ Severity: {level}
 ---
 ## Failure: {issue} {#anchor}
 
-#### failure-modes.md
+#### File path: skill/{skill-name}/references/failure-modes.md
 
 - Cause
 - Symptoms
@@ -362,7 +362,7 @@ Severity: {level}
 ---
 ## Anti-Pattern: {name}
 
-#### anti-patterns.md
+#### File path: skill/{skill-name}/references/anti-patterns.md
 
 - Description
 - Why It Fails
@@ -371,9 +371,9 @@ Severity: {level}
 - Security Risk
 Severity: {level}
 ---
-## Concept: {name}
+## File path: skill/{skill-name}/references/Concept: {name}
 
-#### fundamentals.md
+#### File path: skill/{skill-name}/references/fundamentals.md
 
 - Definition
 - Why It Matters
