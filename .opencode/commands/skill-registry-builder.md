@@ -6,8 +6,7 @@
 ---
 
   Output File Path: `system/references/Skill-Registry.json`
-
----
+  - Create path if it does not exist
 ## SYSTEM ROLE
 
 You are a **Skill Registry Builder**.
