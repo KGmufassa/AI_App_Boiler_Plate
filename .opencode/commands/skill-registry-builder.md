@@ -1,39 +1,44 @@
 ---
  Name: skill-registry-builder
- description: skill-registry-builder is a command that scans all skills in the skills folder, analyzes their purpose and behavior, and generates a structured registry with summaries and optimized metadata (capabilities, roles, domains, complexity, dependencies). This registry enables the agent-task-builder system to accurately select, combine, and orchestrate the right skills for any given task.
+ description: skill-registry-builder is a command that scans only the skills listed in `system/references/markdown/agent-skills.md`, analyzes their purpose and behavior, and generates a structured registry with summaries and optimized metadata (capabilities, roles, domains, complexity, dependencies). This registry enables the agent-task-builder system to accurately select, combine, and orchestrate the right skills for any given task.
  agent: build
  subtask: true
 ---
 
-  Output File Path: `system/references/Skill-Registry.json`
+  Output File Path: `system/references/json/Skill-Registry.json`
   - Create path if it does not exist
 ## SYSTEM ROLE
 
 You are a **Skill Registry Builder**.
 
 Your job is to:
-- scan all skills in the skills folder
+- scan only the skills listed in `system/references/markdown/agent-skills.md`
 - analyze each skill deeply
 - extract structured metadata
 - generate a standardized registry file
 - optimize output for agent-task-builder compatibility
 
 You MUST:
-- process ALL skills
+- process ALL skills listed in `system/references/markdown/agent-skills.md`
 - extract meaningful capabilities
 - infer missing metadata
 - output clean structured JSON
 - ensure compatibility with rule engine
+- do not scan skills that are not listed in `system/references/markdown/agent-skills.md`
 
 ---
 
 ## INPUT
 
- `Skills Folder` (collection of skill files)
+ `Agent Skills Index` (curated collection of skill files)
 
 File path:
 
-     .opencode/skills
+     system/references/markdown/agent-skills.md
+
+Referenced skill files:
+
+     listed by backlink in agent-skills.md
   
 *Each skill may include:*
 - description
@@ -48,9 +53,11 @@ File path:
 
 ---
 
-### STEP 1: LOAD ALL SKILLS
+### STEP 1: LOAD LISTED SKILLS
 
-*FOR EACH file in skills folder:*
+*Read `system/references/markdown/agent-skills.md` first.*
+
+*FOR EACH linked skill file in that document only:*
 
 - read full content
 - identify:
@@ -58,6 +65,13 @@ File path:
   - description
   - purpose
   - execution pattern
+
+*DO NOT:*
+
+- scan the full `.opencode/skills` folder directly
+- include unlisted skills
+- infer additional skills beyond the backlinks in `agent-skills.md`
+- process any skill unless it is explicitly linked in `system/references/markdown/agent-skills.md`
 
 ---
 
@@ -199,7 +213,7 @@ File path:
 
 ### STEP 10: BUILD FINAL SKILL OBJECT
 
-*FOR EACH skill:*
+*FOR EACH listed skill:*
 ```
 {
   "name": "",
@@ -234,6 +248,8 @@ File path:
 - every skill has role_support
 - no duplicate capabilities
 - no empty fields
+- every registry entry maps to a backlink in `system/references/markdown/agent-skills.md`
+- no registry entry exists for a skill not listed in `system/references/markdown/agent-skills.md`
 
 ---
 
@@ -258,6 +274,8 @@ File path:
 - prioritize clarity over verbosity
 - optimize for agent-task-builder compatibility
 - ensure multi-skill composition readiness
+- skip every skill that is not already listed in `system/references/markdown/agent-skills.md`
+- treat `system/references/markdown/agent-skills.md` as the authoritative scan scope
 
 ---
 

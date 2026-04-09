@@ -1,0 +1,1004 @@
+{
+  "skills": [
+    {
+      "name": "agent-skills",
+      "summary": "Scans the repository skill folders, excludes planning skills, and generates a markdown inventory with backlinks to each non-plan skill file. It standardizes skill discovery for reference and navigation workflows.",
+      "primary_use_cases": [
+        "Generate an index of non-plan skills",
+        "Document available reusable agent skills",
+        "Create backlink-based skill reference pages"
+      ],
+      "capabilities": [
+        "scan_skills",
+        "filter_plan_skills",
+        "resolve_skill_files",
+        "generate_markdown_index",
+        "sort_skill_entries",
+        "write_reference_documentation"
+      ],
+      "role_support": [
+        "workspace_management",
+        "orchestration"
+      ],
+      "domain": "orchestration",
+      "complexity_range": [
+        2,
+        4
+      ],
+      "dependencies": [
+        "filesystem_scan",
+        "markdown_generation",
+        "scripts/generate_agent_skills_index.sh"
+      ],
+      "execution_type": "sequential",
+      "priority": 4
+    },
+    {
+      "name": "creating-dynamic-wireframes",
+      "summary": "Reads PRDs or related product documents and converts them into deterministic low-fidelity wireframes with states, triggers, navigation, and ASCII layouts. It supports interpretation, default-file, and update workflows.",
+      "primary_use_cases": [
+        "Generate wireframes from a PRD",
+        "Map page states before UI implementation",
+        "Create structured ASCII page layouts for MVP planning"
+      ],
+      "capabilities": [
+        "ingest_product_docs",
+        "detect_workflow_type",
+        "define_page_architecture",
+        "map_navigation_logic",
+        "document_page_states",
+        "generate_ascii_wireframes",
+        "validate_flow_completeness"
+      ],
+      "role_support": [
+        "feature_implementation",
+        "validation",
+        "orchestration"
+      ],
+      "domain": "frontend",
+      "complexity_range": [
+        7,
+        9
+      ],
+      "dependencies": [
+        "prd_or_feature_documentation",
+        "user_clarifications_for_missing_ux_data",
+        "frontend/reference/wireframes output paths"
+      ],
+      "execution_type": "sequential",
+      "priority": 7
+    },
+    {
+      "name": "debugging-wizard",
+      "summary": "Applies a structured debug workflow that reproduces issues, isolates failures, tests hypotheses, and verifies fixes with prevention steps. It also provides language-specific debugging references and command patterns.",
+      "primary_use_cases": [
+        "Investigate runtime errors and crashes",
+        "Trace stack traces to isolate failure points",
+        "Add regression coverage after fixing a bug"
+      ],
+      "capabilities": [
+        "reproduce_failures",
+        "isolate_minimal_cases",
+        "analyze_stack_traces",
+        "test_hypotheses",
+        "implement_verified_fixes",
+        "add_regression_tests",
+        "document_root_cause"
+      ],
+      "role_support": [
+        "testing_strategy",
+        "validation",
+        "feature_implementation"
+      ],
+      "domain": "testing",
+      "complexity_range": [
+        6,
+        9
+      ],
+      "dependencies": [
+        "error_logs_or_stack_traces",
+        "reproduction_steps",
+        "language_debugging_tools"
+      ],
+      "execution_type": "sequential",
+      "priority": 8
+    },
+    {
+      "name": "defining-tech-stack",
+      "summary": "Derives a production-ready stack definition from an MVP PRD and frontend blueprint by resolving architectural ambiguity one question at a time. It outputs a single authoritative `stack-definition.md` for downstream research and implementation.",
+      "primary_use_cases": [
+        "Select backend technologies for an MVP",
+        "Align database, auth, hosting, and testing choices",
+        "Produce a canonical stack-definition document"
+      ],
+      "capabilities": [
+        "ingest_prd_inputs",
+        "extract_architecture_constraints",
+        "ask_clarifying_questions",
+        "select_backend_frameworks",
+        "select_database_and_auth",
+        "validate_stack_compatibility",
+        "write_stack_definition"
+      ],
+      "role_support": [
+        "dependency_management",
+        "orchestration",
+        "validation"
+      ],
+      "domain": "backend",
+      "complexity_range": [
+        7,
+        10
+      ],
+      "dependencies": [
+        "draft_mvp_prd",
+        "frontend_blueprint",
+        "user_architecture_decisions"
+      ],
+      "execution_type": "sequential",
+      "priority": 8
+    },
+    {
+      "name": "designing-ui-ux-prd",
+      "summary": "Transforms draft PRDs into an implementation-ready UI/UX PRD with page layouts, navigation, buttons, glyph suggestions, and interaction rules. It enforces deterministic visual-direction decisions through one-at-a-time UX clarification.",
+      "primary_use_cases": [
+        "Create a UI/UX PRD from a product PRD",
+        "Define MVP page inventory and navigation structure",
+        "Specify buttons, glyphs, and interaction behavior before implementation"
+      ],
+      "capabilities": [
+        "ingest_prd_documents",
+        "ask_ux_clarifications",
+        "define_page_architecture",
+        "map_buttons_to_actions",
+        "suggest_ui_glyphs",
+        "document_interaction_rules",
+        "write_ui_ux_prd"
+      ],
+      "role_support": [
+        "feature_implementation",
+        "orchestration",
+        "validation"
+      ],
+      "domain": "frontend",
+      "complexity_range": [
+        7,
+        9
+      ],
+      "dependencies": [
+        "draft_prd_inputs",
+        "user_ui_preferences",
+        "frontend/reference/ui-ux-draft.md output path"
+      ],
+      "execution_type": "sequential",
+      "priority": 7
+    },
+    {
+      "name": "dynamic-wireframe-mapper",
+      "summary": "Analyzes PRDs, UI drafts, or user-flow documents and generates ASCII dependency graphs that connect user actions, UI components, state changes, and backend responses. It adapts graph structure dynamically to the source document type.",
+      "primary_use_cases": [
+        "Visualize component dependencies from documentation",
+        "Map UI-to-backend interaction chains",
+        "Create ASCII system flow diagrams from PRDs or user flows"
+      ],
+      "capabilities": [
+        "detect_document_type",
+        "extract_components_and_states",
+        "map_trigger_chains",
+        "model_data_flow",
+        "generate_ascii_dependency_graphs",
+        "summarize_graph_findings"
+      ],
+      "role_support": [
+        "feature_implementation",
+        "validation",
+        "orchestration"
+      ],
+      "domain": "frontend",
+      "complexity_range": [
+        6,
+        8
+      ],
+      "dependencies": [
+        "source_document_path",
+        "ascii_diagram_output",
+        "documented_ui_or_flow_evidence"
+      ],
+      "execution_type": "sequential",
+      "priority": 6
+    },
+    {
+      "name": "git-worktree-orchestrator",
+      "summary": "Creates isolated git worktrees for feature execution, including directory selection, safety checks, environment setup, and baseline test validation. It enforces deterministic setup before implementation work begins.",
+      "primary_use_cases": [
+        "Start new feature work in an isolated worktree",
+        "Prepare a clean environment for implementation plans",
+        "Validate baseline project health before coding"
+      ],
+      "capabilities": [
+        "select_worktree_directory",
+        "verify_gitignore_safety",
+        "create_git_worktree",
+        "auto_install_dependencies",
+        "detect_project_tooling",
+        "run_baseline_tests",
+        "report_ready_workspace"
+      ],
+      "role_support": [
+        "environment_setup",
+        "workspace_management",
+        "validation"
+      ],
+      "domain": "devops",
+      "complexity_range": [
+        5,
+        8
+      ],
+      "dependencies": [
+        "git_repository",
+        "git_worktree_support",
+        "project_setup_commands",
+        "baseline_test_command"
+      ],
+      "execution_type": "sequential",
+      "priority": 7
+    },
+    {
+      "name": "mapping-user-flow-progression",
+      "summary": "Maps detailed page progression, trigger-level interactions, state transitions, and backend hooks into reproducible UX flow documents. It writes both a master overview and per-page flow artifacts.",
+      "primary_use_cases": [
+        "Define click-level UX progression before implementation",
+        "Document page entry and exit behavior",
+        "Generate deterministic trigger maps for frontend flows"
+      ],
+      "capabilities": [
+        "ask_flow_clarifications",
+        "define_primary_user_journey",
+        "inventory_pages",
+        "map_trigger_tables",
+        "document_state_transitions",
+        "define_interaction_chains",
+        "write_flow_documents"
+      ],
+      "role_support": [
+        "feature_implementation",
+        "orchestration",
+        "validation"
+      ],
+      "domain": "frontend",
+      "complexity_range": [
+        7,
+        9
+      ],
+      "dependencies": [
+        "ui_ux_draft_or_user_input",
+        "user_behavior_clarifications",
+        "docs/Frontend/ui-ux-design/ux-flows output path"
+      ],
+      "execution_type": "sequential",
+      "priority": 7
+    },
+    {
+      "name": "plan-draft-all-core",
+      "summary": "Supervises the full Stage 1 through Stage 4 planning pipeline by invoking each stage in order and stopping on first failure. It produces a consolidated report and preserves stage-owned boundaries.",
+      "primary_use_cases": [
+        "Run the full multi-stage planning pipeline",
+        "Coordinate stage drafting in strict order",
+        "Generate a consolidated planning progress report"
+      ],
+      "capabilities": [
+        "orchestrate_stage_pipeline",
+        "invoke_stage_skills",
+        "stop_on_failure",
+        "aggregate_stage_results",
+        "update_planning_metadata",
+        "write_supervisor_report"
+      ],
+      "role_support": [
+        "orchestration",
+        "workspace_management",
+        "validation"
+      ],
+      "domain": "orchestration",
+      "complexity_range": [
+        7,
+        9
+      ],
+      "dependencies": [
+        "initialized_planning_workspace",
+        "plan-stage1-core",
+        "plan-stage2-core",
+        "plan-stage3-core",
+        "plan-stage4-core"
+      ],
+      "execution_type": "orchestrator",
+      "priority": 8
+    },
+    {
+      "name": "plan-freeze-stage1-core",
+      "summary": "Validates and freezes Stage 1 planning artifacts by reconciling scope, stack, gates, and architecture decisions. It writes a freeze review and updates manifest and state to a Stage 1 frozen state.",
+      "primary_use_cases": [
+        "Freeze Stage 1 planning outputs",
+        "Validate Stage 1 readiness before Stage 2",
+        "Produce a Stage 1 freeze review artifact"
+      ],
+      "capabilities": [
+        "reconcile_stage_outputs",
+        "validate_freeze_criteria",
+        "detect_contradictions",
+        "write_freeze_review",
+        "update_manifest_state",
+        "advance_stage_status"
+      ],
+      "role_support": [
+        "validation",
+        "workspace_management",
+        "orchestration"
+      ],
+      "domain": "orchestration",
+      "complexity_range": [
+        5,
+        7
+      ],
+      "dependencies": [
+        "plan-stage1-core outputs",
+        "manifest_and_state_files",
+        "stage_1_template_dependencies"
+      ],
+      "execution_type": "sequential",
+      "priority": 7
+    },
+    {
+      "name": "plan-freeze-stage2-core",
+      "summary": "Reconciles Stage 2 contract artifacts, validates readiness, and transitions the planning workspace to a Stage 2 frozen state. It focuses on data model, contract, integration, and security consistency.",
+      "primary_use_cases": [
+        "Freeze Stage 2 planning artifacts",
+        "Validate backend contract consistency before Stage 3",
+        "Create a Stage 2 freeze review report"
+      ],
+      "capabilities": [
+        "reconcile_contract_artifacts",
+        "validate_contract_readiness",
+        "check_integration_alignment",
+        "check_security_alignment",
+        "write_freeze_review",
+        "update_manifest_state"
+      ],
+      "role_support": [
+        "validation",
+        "workspace_management",
+        "orchestration"
+      ],
+      "domain": "orchestration",
+      "complexity_range": [
+        5,
+        7
+      ],
+      "dependencies": [
+        "plan-stage2-core outputs",
+        "manifest_and_state_files",
+        "stage_2_template_dependencies"
+      ],
+      "execution_type": "sequential",
+      "priority": 7
+    },
+    {
+      "name": "plan-freeze-stage3-core",
+      "summary": "Freezes Stage 3 by validating workflow, frontend experience, component strategy, and analytics assumptions against the approved template set. It records the result in paired review artifacts and metadata.",
+      "primary_use_cases": [
+        "Freeze Stage 3 UX and component planning",
+        "Validate frontend planning consistency before Stage 4",
+        "Generate a Stage 3 freeze review"
+      ],
+      "capabilities": [
+        "reconcile_workflow_artifacts",
+        "validate_frontend_readiness",
+        "check_component_strategy_alignment",
+        "check_analytics_alignment",
+        "write_freeze_review",
+        "update_manifest_state"
+      ],
+      "role_support": [
+        "validation",
+        "workspace_management",
+        "orchestration"
+      ],
+      "domain": "orchestration",
+      "complexity_range": [
+        5,
+        7
+      ],
+      "dependencies": [
+        "plan-stage3-core outputs",
+        "manifest_and_state_files",
+        "stage_3_template_dependencies"
+      ],
+      "execution_type": "sequential",
+      "priority": 7
+    },
+    {
+      "name": "plan-freeze-stage4-core",
+      "summary": "Freezes Stage 4 delivery planning by reconciling infrastructure, QA, operations, risk, and release-slice assumptions. It writes the freeze review and updates planning metadata to Stage 4 frozen.",
+      "primary_use_cases": [
+        "Freeze Stage 4 delivery artifacts",
+        "Validate release readiness planning",
+        "Produce a final Stage 4 freeze review"
+      ],
+      "capabilities": [
+        "reconcile_delivery_artifacts",
+        "validate_release_readiness",
+        "check_operations_alignment",
+        "check_risk_alignment",
+        "write_freeze_review",
+        "update_manifest_state"
+      ],
+      "role_support": [
+        "validation",
+        "workspace_management",
+        "orchestration"
+      ],
+      "domain": "orchestration",
+      "complexity_range": [
+        5,
+        7
+      ],
+      "dependencies": [
+        "plan-stage4-core outputs",
+        "manifest_and_state_files",
+        "stage_4_template_dependencies"
+      ],
+      "execution_type": "sequential",
+      "priority": 7
+    },
+    {
+      "name": "plan-reopen-stage-core",
+      "summary": "Reopens a previously frozen planning stage, records the reason, and invalidates downstream frozen stages when necessary. It restores a valid state-machine path through paired reopen reports and metadata changes.",
+      "primary_use_cases": [
+        "Reopen a frozen planning stage for revisions",
+        "Invalidate downstream stages after upstream changes",
+        "Generate a stage-reopen audit report"
+      ],
+      "capabilities": [
+        "reopen_stage",
+        "invalidate_downstream_stages",
+        "record_reopen_reason",
+        "recompute_next_valid_commands",
+        "write_reopen_report",
+        "update_manifest_state"
+      ],
+      "role_support": [
+        "workspace_management",
+        "validation",
+        "orchestration"
+      ],
+      "domain": "orchestration",
+      "complexity_range": [
+        4,
+        6
+      ],
+      "dependencies": [
+        "target_stage_identifier",
+        "manifest_and_state_files",
+        "planning_state_machine_references"
+      ],
+      "execution_type": "sequential",
+      "priority": 6
+    },
+    {
+      "name": "plan-slices-core",
+      "summary": "Generates slice implementation plans from frozen Stage 1 through Stage 4 planning outputs and selected planning templates. It preserves slice ordering constraints and updates the planning workspace state.",
+      "primary_use_cases": [
+        "Create implementation slices from frozen plans",
+        "Translate planning outputs into slice-by-slice execution artifacts",
+        "Set slice ordering based on roadmap constraints"
+      ],
+      "capabilities": [
+        "derive_slice_order",
+        "generate_slice_plans",
+        "preserve_planning_constraints",
+        "create_slice_index",
+        "write_paired_markdown_json_artifacts",
+        "update_manifest_state"
+      ],
+      "role_support": [
+        "orchestration",
+        "feature_implementation",
+        "workspace_management"
+      ],
+      "domain": "orchestration",
+      "complexity_range": [
+        6,
+        8
+      ],
+      "dependencies": [
+        "frozen_stage1_to_stage4_outputs",
+        "manifest_and_state_files",
+        "roadmap_template_dependencies"
+      ],
+      "execution_type": "sequential",
+      "priority": 8
+    },
+    {
+      "name": "plan-stage1-core",
+      "summary": "Initial Stage 1 planning worker that reads intake and PRD artifacts, generates bounded Stage 1 plans, and updates metadata without freezing the stage. It establishes MVP scope, architecture direction, and dependency gates.",
+      "primary_use_cases": [
+        "Draft Stage 1 planning artifacts",
+        "Generate MVP scope and architecture direction",
+        "Prepare a planning workspace for Stage 1 review"
+      ],
+      "capabilities": [
+        "load_workspace_state",
+        "validate_stage_eligibility",
+        "generate_stage1_artifacts",
+        "create_paired_json_outputs",
+        "update_manifest_state",
+        "validate_output_boundaries"
+      ],
+      "role_support": [
+        "orchestration",
+        "workspace_management",
+        "validation"
+      ],
+      "domain": "orchestration",
+      "complexity_range": [
+        7,
+        9
+      ],
+      "dependencies": [
+        "plan-start-core outputs",
+        "stage_1_reference_templates",
+        "manifest_and_state_files"
+      ],
+      "execution_type": "sequential",
+      "priority": 9
+    },
+    {
+      "name": "plan-stage2-core",
+      "summary": "Drafts Stage 2 contract and constraint artifacts using frozen Stage 1 context plus any activated conditional templates. It updates metadata while keeping work strictly inside Stage 2 boundaries.",
+      "primary_use_cases": [
+        "Draft Stage 2 contracts and data models",
+        "Generate API, runtime, and schema planning artifacts",
+        "Advance a planning workspace into Stage 2 drafting"
+      ],
+      "capabilities": [
+        "load_frozen_stage1_context",
+        "generate_contract_artifacts",
+        "activate_conditional_documents",
+        "create_paired_json_outputs",
+        "update_manifest_state",
+        "enforce_stage_boundaries"
+      ],
+      "role_support": [
+        "orchestration",
+        "workspace_management",
+        "validation"
+      ],
+      "domain": "orchestration",
+      "complexity_range": [
+        7,
+        9
+      ],
+      "dependencies": [
+        "plan-freeze-stage1-core completion",
+        "stage_2_template_dependencies",
+        "manifest_and_state_files"
+      ],
+      "execution_type": "sequential",
+      "priority": 9
+    },
+    {
+      "name": "plan-stage3-core",
+      "summary": "Drafts Stage 3 workflow and frontend artifacts from frozen Stage 2 context, including UX, component system, and optional analytics plans. It updates manifest and state while keeping the work unfrozen and Stage 3-scoped.",
+      "primary_use_cases": [
+        "Draft Stage 3 UX and frontend planning artifacts",
+        "Generate component system and interaction plans",
+        "Advance planning into frontend workflow definition"
+      ],
+      "capabilities": [
+        "load_frozen_stage2_context",
+        "generate_workflow_artifacts",
+        "generate_frontend_decision_plans",
+        "create_paired_json_outputs",
+        "update_manifest_state",
+        "enforce_stage_boundaries"
+      ],
+      "role_support": [
+        "orchestration",
+        "workspace_management",
+        "validation"
+      ],
+      "domain": "orchestration",
+      "complexity_range": [
+        7,
+        9
+      ],
+      "dependencies": [
+        "plan-freeze-stage2-core completion",
+        "stage_3_template_dependencies",
+        "manifest_and_state_files"
+      ],
+      "execution_type": "sequential",
+      "priority": 9
+    },
+    {
+      "name": "plan-stage4-core",
+      "summary": "Drafts Stage 4 delivery, release-readiness, infrastructure, and risk artifacts from frozen Stage 3 context. It prepares the planning workspace for final operational review without freezing the stage.",
+      "primary_use_cases": [
+        "Draft Stage 4 delivery planning artifacts",
+        "Generate deployment and QA readiness plans",
+        "Prepare release-slice and operations planning"
+      ],
+      "capabilities": [
+        "load_frozen_stage3_context",
+        "generate_delivery_artifacts",
+        "generate_operations_and_risk_plans",
+        "create_paired_json_outputs",
+        "update_manifest_state",
+        "enforce_stage_boundaries"
+      ],
+      "role_support": [
+        "orchestration",
+        "workspace_management",
+        "validation"
+      ],
+      "domain": "orchestration",
+      "complexity_range": [
+        7,
+        9
+      ],
+      "dependencies": [
+        "plan-freeze-stage3-core completion",
+        "stage_4_template_dependencies",
+        "manifest_and_state_files"
+      ],
+      "execution_type": "sequential",
+      "priority": 9
+    },
+    {
+      "name": "plan-start-core",
+      "summary": "Initializes the planning workspace for a new app idea by drafting intake and PRD artifacts, selecting the planning path, and creating manifest and state files. It is the foundational entry point for the multi-stage planning system.",
+      "primary_use_cases": [
+        "Start a new planning workspace for an app idea",
+        "Generate intake and PRD artifacts from normalized inputs",
+        "Initialize manifest and state for downstream planning commands"
+      ],
+      "capabilities": [
+        "normalize_app_inputs",
+        "select_planning_path",
+        "activate_required_templates",
+        "draft_intake_documents",
+        "draft_prd_documents",
+        "create_manifest_state_files",
+        "validate_initial_outputs"
+      ],
+      "role_support": [
+        "workspace_management",
+        "orchestration",
+        "validation"
+      ],
+      "domain": "orchestration",
+      "complexity_range": [
+        8,
+        10
+      ],
+      "dependencies": [
+        "app_idea_inputs",
+        "planning_templates",
+        "output_workspace_structure"
+      ],
+      "execution_type": "sequential",
+      "priority": 10
+    },
+    {
+      "name": "plan-status-core",
+      "summary": "Inspects planning manifest and state files to produce a paired status report for the current planning workspace. It surfaces current stage, blockers, frozen stages, active templates, and next valid commands.",
+      "primary_use_cases": [
+        "Check current planning workspace status",
+        "Report blockers and valid next commands",
+        "Generate a machine-readable planning status artifact"
+      ],
+      "capabilities": [
+        "read_manifest_state",
+        "report_current_stage",
+        "report_frozen_stages",
+        "report_active_templates",
+        "report_blockers",
+        "write_status_report"
+      ],
+      "role_support": [
+        "validation",
+        "workspace_management"
+      ],
+      "domain": "orchestration",
+      "complexity_range": [
+        3,
+        5
+      ],
+      "dependencies": [
+        "manifest.json",
+        "state.json",
+        "planning_status_references"
+      ],
+      "execution_type": "atomic",
+      "priority": 8
+    },
+    {
+      "name": "plan-tasks-core",
+      "summary": "Generates one task list per slice from slice implementation plans and updates the planning manifest and state. It keeps task ordering grounded in the exact frozen planning documents and orchestration templates.",
+      "primary_use_cases": [
+        "Translate slice plans into task lists",
+        "Generate execution-ready task artifacts per slice",
+        "Advance planning state to task list generation"
+      ],
+      "capabilities": [
+        "derive_tasks_from_slice_plans",
+        "preserve_execution_order",
+        "generate_task_indexes",
+        "write_paired_markdown_json_artifacts",
+        "update_manifest_state",
+        "maintain_slice_grouping"
+      ],
+      "role_support": [
+        "orchestration",
+        "feature_implementation",
+        "workspace_management"
+      ],
+      "domain": "orchestration",
+      "complexity_range": [
+        6,
+        8
+      ],
+      "dependencies": [
+        "plan-slices-core outputs",
+        "meta/json metadata",
+        "execution_template_dependencies"
+      ],
+      "execution_type": "sequential",
+      "priority": 8
+    },
+    {
+      "name": "plan-tickets-core",
+      "summary": "Converts slice task lists into execution-ready implementation tickets while preserving slice grouping and stage ownership. It writes paired markdown and JSON ticket artifacts and updates planning state.",
+      "primary_use_cases": [
+        "Generate implementation tickets from task lists",
+        "Prepare execution artifacts for downstream builders",
+        "Advance planning state to ticket generation"
+      ],
+      "capabilities": [
+        "derive_tickets_from_tasks",
+        "preserve_slice_grouping",
+        "maintain_dependency_ownership",
+        "generate_ticket_indexes",
+        "write_paired_markdown_json_artifacts",
+        "update_manifest_state"
+      ],
+      "role_support": [
+        "orchestration",
+        "feature_implementation",
+        "workspace_management"
+      ],
+      "domain": "orchestration",
+      "complexity_range": [
+        6,
+        8
+      ],
+      "dependencies": [
+        "plan-tasks-core outputs",
+        "meta/json metadata",
+        "ticket_template_dependencies"
+      ],
+      "execution_type": "sequential",
+      "priority": 7
+    },
+    {
+      "name": "researching-tech-stack-best-practices",
+      "summary": "Reads a confirmed `stack-definition.md`, researches each declared technology independently via an MCP source such as Context7, and writes modular best-practice guides plus a stack overview. It treats each technology as a separate research unit and validates output coverage before completion.",
+      "primary_use_cases": [
+        "Research production best practices for a chosen stack",
+        "Generate one best-practice file per technology",
+        "Produce a cross-stack architecture overview"
+      ],
+      "capabilities": [
+        "read_stack_definition",
+        "extract_technologies",
+        "normalize_technology_names",
+        "query_external_docs",
+        "generate_modular_best_practice_files",
+        "generate_stack_overview",
+        "validate_output_coverage"
+      ],
+      "role_support": [
+        "dependency_management",
+        "validation",
+        "orchestration"
+      ],
+      "domain": "general",
+      "complexity_range": [
+        7,
+        9
+      ],
+      "dependencies": [
+        "stack-definition.md",
+        "context7_or_mcp_access",
+        "docs/system/stack-best-practices output paths"
+      ],
+      "execution_type": "orchestrator",
+      "priority": 6
+    },
+    {
+      "name": "security-review",
+      "summary": "Provides a security-first review framework for authentication, input handling, secrets, APIs, payments, and sensitive data flows. It combines implementation patterns, checklists, and pre-deployment validation criteria to reduce common vulnerabilities.",
+      "primary_use_cases": [
+        "Review new auth or authorization code",
+        "Validate input handling and API security",
+        "Run a pre-deployment security checklist"
+      ],
+      "capabilities": [
+        "review_secrets_management",
+        "review_input_validation",
+        "review_auth_and_authorization",
+        "review_xss_csrf_and_rate_limits",
+        "review_sensitive_data_exposure",
+        "review_dependency_security",
+        "define_security_test_checks"
+      ],
+      "role_support": [
+        "validation",
+        "testing_strategy",
+        "feature_implementation"
+      ],
+      "domain": "general",
+      "complexity_range": [
+        7,
+        10
+      ],
+      "dependencies": [
+        "application_code_or_design_changes",
+        "security_sensitive_features",
+        "deployment_context"
+      ],
+      "execution_type": "sequential",
+      "priority": 9
+    },
+    {
+      "name": "swift-expert",
+      "summary": "Specialist implementation skill for Swift ecosystems covering SwiftUI, protocol-oriented architecture, async/await concurrency, actors, performance, and testing. It provides concrete code patterns and validation checkpoints for Apple-platform and server-side Swift work.",
+      "primary_use_cases": [
+        "Implement SwiftUI views and view models",
+        "Design protocol-oriented Swift architectures",
+        "Build and test async Swift concurrency code"
+      ],
+      "capabilities": [
+        "analyze_swift_architecture",
+        "design_protocol_first_apis",
+        "implement_swiftui_and_uikit_code",
+        "apply_async_await_patterns",
+        "use_actors_for_thread_safety",
+        "optimize_swift_performance",
+        "write_xctest_coverage"
+      ],
+      "role_support": [
+        "feature_implementation",
+        "testing_strategy",
+        "validation"
+      ],
+      "domain": "general",
+      "complexity_range": [
+        7,
+        10
+      ],
+      "dependencies": [
+        "swift_5_9_or_newer_toolchain",
+        "swift_build_and_test_commands",
+        "swift_platform_context"
+      ],
+      "execution_type": "sequential",
+      "priority": 6
+    },
+    {
+      "name": "systematic-debugger",
+      "summary": "Enforces a strict root-cause-first debugging process that forbids fixes before evidence gathering, pattern analysis, and minimal hypothesis testing. It is designed to stop guess-and-check debugging and drive reliable bug resolution.",
+      "primary_use_cases": [
+        "Investigate bugs before proposing fixes",
+        "Analyze repeated failed fix attempts",
+        "Create a root-cause-driven path to verified remediation"
+      ],
+      "capabilities": [
+        "investigate_root_cause",
+        "gather_multilayer_evidence",
+        "trace_data_flow_backward",
+        "compare_working_and_broken_patterns",
+        "form_and_test_hypotheses",
+        "require_failing_tests_before_fixes",
+        "question_architecture_after_repeated_failures"
+      ],
+      "role_support": [
+        "testing_strategy",
+        "validation",
+        "feature_implementation"
+      ],
+      "domain": "testing",
+      "complexity_range": [
+        8,
+        10
+      ],
+      "dependencies": [
+        "reproducible_issue_or_failure_signal",
+        "logs_or_stack_traces",
+        "test-driven-development skill for regression coverage"
+      ],
+      "execution_type": "sequential",
+      "priority": 10
+    },
+    {
+      "name": "test-driven-development",
+      "summary": "Imposes strict test-first implementation for features, bug fixes, and refactors using the red-green-refactor cycle. It requires watching a test fail before writing production code and validating green status before cleanup.",
+      "primary_use_cases": [
+        "Implement a new feature with test-first discipline",
+        "Fix a bug by reproducing it with a failing test",
+        "Refactor safely with behavior locked by tests"
+      ],
+      "capabilities": [
+        "write_failing_tests_first",
+        "verify_expected_failure",
+        "implement_minimal_passing_code",
+        "verify_green_state",
+        "refactor_without_behavior_change",
+        "enforce_real_behavior_testing",
+        "prevent_test_after_implementation_workflows"
+      ],
+      "role_support": [
+        "testing_strategy",
+        "feature_implementation",
+        "validation"
+      ],
+      "domain": "testing",
+      "complexity_range": [
+        7,
+        9
+      ],
+      "dependencies": [
+        "test_framework",
+        "runnable_test_command",
+        "target_behavior_definition"
+      ],
+      "execution_type": "sequential",
+      "priority": 10
+    },
+    {
+      "name": "worktree-merge-manager",
+      "summary": "Safely merges or discards a git worktree using a human-in-the-loop confirmation flow, clean-state validation, and post-action cleanup. It is specifically designed to prevent accidental data loss during worktree lifecycle completion.",
+      "primary_use_cases": [
+        "Merge a completed worktree branch into its base branch",
+        "Discard an abandoned worktree safely",
+        "Clean up worktrees after feature isolation"
+      ],
+      "capabilities": [
+        "validate_clean_worktree_state",
+        "summarize_branch_changes",
+        "request_explicit_confirmation",
+        "merge_branch_or_discard_branch",
+        "remove_worktree",
+        "prune_worktrees",
+        "validate_final_repo_state"
+      ],
+      "role_support": [
+        "workspace_management",
+        "validation",
+        "orchestration"
+      ],
+      "domain": "devops",
+      "complexity_range": [
+        5,
+        8
+      ],
+      "dependencies": [
+        "existing_git_worktree",
+        "clean_git_status",
+        "explicit_human_confirmation"
+      ],
+      "execution_type": "sequential",
+      "priority": 6
+    }
+  ]
+}

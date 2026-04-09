@@ -238,7 +238,7 @@ Output exactly one JSON object in this shape:
   "agent_config": {
     "name": "primary-agent",
     "mode": "primary",
-    "model": "opencode/gpt-5.1-codex"
+    "model": "opencode/gpt-5.4-codex"
   },
   "subagents": [
     {
