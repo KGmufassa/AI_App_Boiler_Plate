@@ -10,7 +10,7 @@ This skill reopens one stage only.
 ## Inputs
 
 - target stage number
-- metadata from `meta/json`
+- metadata from `Build Plan/Active Plans/json/`
 - state-machine references:
   - `Planning Template/Build-Plan-Template-Index.md`
   - `Planning Template/Command-Contract-Draft.md`
@@ -26,13 +26,13 @@ This skill reopens one stage only.
 
 Markdown:
 
-- `Build Plan/Active Plans/<app_slug>/meta/markdown/reopen-stage-<n>-report.md`
+- `Build Plan/Active Plans/markdown/reopen-stage-<n>-report.md`
 
 JSON:
 
-- `Build Plan/Active Plans/<app_slug>/meta/json/reopen-stage-<n>-report.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- `Build Plan/Active Plans/json/reopen-stage-<n>-report.json`
+- updated `Build Plan/Active Plans/json/manifest.json`
+- updated `Build Plan/Active Plans/json/state.json`
 
 ## Instructions
 

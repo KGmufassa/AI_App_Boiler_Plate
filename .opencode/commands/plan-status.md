@@ -12,8 +12,8 @@ This command reports current planning status.
 ## Inputs
 
 - `app_name` or `app_slug`
-- `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- `Build Plan/Active Plans/json/manifest.json`
+- `Build Plan/Active Plans/json/state.json`
 
 ## Execution Flow
 
@@ -27,8 +27,8 @@ Skill:
 
 Markdown:
 
-- `Build Plan/Active Plans/<app_slug>/meta/markdown/status-report.md`
+- `Build Plan/Active Plans/markdown/status-report.md`
 
 JSON:
 
-- `Build Plan/Active Plans/<app_slug>/meta/json/status-report.json`
+- `Build Plan/Active Plans/json/status-report.json`

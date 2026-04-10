@@ -10,7 +10,7 @@ This skill generates task lists only.
 ## Inputs
 
 - slice implementation outputs
-- metadata from `meta/json`
+- metadata from `Build Plan/Active Plans/json/`
 - execution template dependencies:
   - `Planning Template/Build-Plan-Template-Index.md`
   - `Planning Template/Dynamic-Build-Plan-Template.md`
@@ -26,14 +26,14 @@ This skill generates task lists only.
 
 Markdown:
 
-- `Build Plan/Active Plans/<app_slug>/Task List/markdown/Task-List-Index.md`
-- `Build Plan/Active Plans/<app_slug>/Task List/markdown/Slice-<n>-Task-List.md`
+- `Build Plan/Active Plans/Task List/markdown/Task-List-Index.md`
+- `Build Plan/Active Plans/Task List/markdown/Slice-<n>-Task-List.md`
 
 JSON:
 
 - paired `.json` files for every markdown artifact above in sibling `json/`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- updated `Build Plan/Active Plans/json/manifest.json`
+- updated `Build Plan/Active Plans/json/state.json`
 
 ## Instructions
 

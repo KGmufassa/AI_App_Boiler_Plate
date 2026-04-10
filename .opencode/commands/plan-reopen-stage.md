@@ -13,7 +13,7 @@ This command reopens a frozen stage.
 
 - `app_name` or `app_slug`
 - `stage_number`
-- metadata from `meta/json`
+- metadata from `Build Plan/Active Plans/json/`
 
 ## Execution Flow
 
@@ -31,10 +31,10 @@ Skill:
 
 Markdown:
 
-- `Build Plan/Active Plans/<app_slug>/meta/markdown/reopen-stage-<n>-report.md`
+- `Build Plan/Active Plans/markdown/reopen-stage-<n>-report.md`
 
 JSON:
 
-- `Build Plan/Active Plans/<app_slug>/meta/json/reopen-stage-<n>-report.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- `Build Plan/Active Plans/json/reopen-stage-<n>-report.json`
+- updated `Build Plan/Active Plans/json/manifest.json`
+- updated `Build Plan/Active Plans/json/state.json`

@@ -24,7 +24,7 @@ Optional behavior:
 
 - `app_name` or `app_slug`
 - Stage 3 frozen workspace
-- metadata from `meta/json`
+- metadata from `Build Plan/Active Plans/json/`
 
 ## Internal Skills
 
@@ -51,22 +51,22 @@ IF `--draft-only` is not set:
 
 Markdown:
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-4/markdown/Deployment-And-Infrastructure-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-4/markdown/Caching-And-Performance-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-4/markdown/QA-And-Release-Readiness-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-4/markdown/Vertical-Release-Slice-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-4/markdown/Deployment-And-Infrastructure-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-4/markdown/Caching-And-Performance-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-4/markdown/QA-And-Release-Readiness-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-4/markdown/Vertical-Release-Slice-Plan.md`
 
 Conditional markdown:
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-4/markdown/Operations-And-Support-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-4/markdown/Risk-And-Assumption-Register.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-4/markdown/Operations-And-Support-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-4/markdown/Risk-And-Assumption-Register.md`
 
 JSON:
 
 - paired `.json` artifacts for every markdown file above in sibling `json/`
-- updated metadata in `meta/json`
+- updated `Build Plan/Active Plans/json/manifest.json` and `Build Plan/Active Plans/json/state.json`
 
 Freeze review outputs when not in `--draft-only` mode:
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-4/markdown/Stage-4-Freeze-Review.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-4/json/Stage-4-Freeze-Review.json`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-4/markdown/Stage-4-Freeze-Review.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-4/json/Stage-4-Freeze-Review.json`

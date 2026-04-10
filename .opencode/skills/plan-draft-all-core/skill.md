@@ -12,7 +12,7 @@ It must not bypass stage-specific command logic.
 ## Inputs
 
 - initialized planning workspace
-- metadata from `meta/json`
+- metadata from `Build Plan/Active Plans/json/`
 - supervisor references:
   - `Planning Template/Build-Plan-Template-Index.md`
   - `Planning Template/Command-Contract-Draft.md`
@@ -29,13 +29,13 @@ It must not bypass stage-specific command logic.
 
 Markdown:
 
-- `Build Plan/Active Plans/<app_slug>/meta/markdown/plan-draft-all-report.md`
+- `Build Plan/Active Plans/markdown/plan-draft-all-report.md`
 
 JSON:
 
-- `Build Plan/Active Plans/<app_slug>/meta/json/plan-draft-all-report.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- `Build Plan/Active Plans/json/plan-draft-all-report.json`
+- updated `Build Plan/Active Plans/json/manifest.json`
+- updated `Build Plan/Active Plans/json/state.json`
 
 ## Instructions
 

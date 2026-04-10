@@ -95,15 +95,15 @@ IF `planning_path` missing:
 
 ### Markdown
 
-- `Build Plan/Active Plans/<app_slug>/PRDs/markdown/App-Idea-Intake.md`
-- `Build Plan/Active Plans/<app_slug>/PRDs/markdown/Product-Requirements-Document.md`
+- `Build Plan/Active Plans/PRDs/markdown/App-Idea-Intake.md`
+- `Build Plan/Active Plans/PRDs/markdown/Product-Requirements-Document.md`
 
 ### JSON
 
-- `Build Plan/Active Plans/<app_slug>/PRDs/json/App-Idea-Intake.json`
-- `Build Plan/Active Plans/<app_slug>/PRDs/json/Product-Requirements-Document.json`
-- `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- `Build Plan/Active Plans/PRDs/json/App-Idea-Intake.json`
+- `Build Plan/Active Plans/PRDs/json/Product-Requirements-Document.json`
+- `Build Plan/Active Plans/json/manifest.json`
+- `Build Plan/Active Plans/json/state.json`
 
 ---
 
@@ -126,8 +126,8 @@ IF `planning_path` missing:
     "PRDs/markdown/Product-Requirements-Document.md",
     "PRDs/json/App-Idea-Intake.json",
     "PRDs/json/Product-Requirements-Document.json",
-    "meta/json/manifest.json",
-    "meta/json/state.json"
+    "json/manifest.json",
+    "json/state.json"
   ]
 }
 ```
@@ -274,7 +274,7 @@ Before finishing, verify:
 - do not activate every optional template by default
 - do not skip manifest or state generation
 - do not drift from repository planning templates
-- do not write outputs outside `Build Plan/Active Plans/<app_slug>/`
+- do not write outputs outside `Build Plan/Active Plans/`
 - keep markdown and JSON outputs paired in sibling `markdown/` and `json/` folders
 
 ---

@@ -13,7 +13,7 @@ This command generates slice implementation plans after Stage 4 is frozen.
 
 - `app_name` or `app_slug`
 - frozen Stage 1 through Stage 4 outputs
-- metadata from `meta/json`
+- metadata from `Build Plan/Active Plans/json/`
 
 ## Execution Flow
 
@@ -31,12 +31,12 @@ Skill:
 
 Markdown:
 
-- `Build Plan/Active Plans/<app_slug>/Slice Implementaion/markdown/Slice-Implementation-Index.md`
-- `Build Plan/Active Plans/<app_slug>/Slice Implementaion/markdown/Slice-<n>-<Outcome>-Implementation-Plan.md`
+- `Build Plan/Active Plans/Slice Implementaion/markdown/Slice-Implementation-Index.md`
+- `Build Plan/Active Plans/Slice Implementaion/markdown/Slice-<n>-<Outcome>-Implementation-Plan.md`
 
 JSON:
 
-- `Build Plan/Active Plans/<app_slug>/Slice Implementaion/json/Slice-Implementation-Index.json`
-- `Build Plan/Active Plans/<app_slug>/Slice Implementaion/json/Slice-<n>-<Outcome>-Implementation-Plan.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- `Build Plan/Active Plans/Slice Implementaion/json/Slice-Implementation-Index.json`
+- `Build Plan/Active Plans/Slice Implementaion/json/Slice-<n>-<Outcome>-Implementation-Plan.json`
+- updated `Build Plan/Active Plans/json/manifest.json`
+- updated `Build Plan/Active Plans/json/state.json`

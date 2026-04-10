@@ -10,8 +10,8 @@ This skill freezes Stage 1 only.
 ## Inputs
 
 - Stage 1 markdown/json outputs
-- `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- `Build Plan/Active Plans/json/manifest.json`
+- `Build Plan/Active Plans/json/state.json`
 - Stage 1 template dependencies:
   - `Planning Template/Dynamic-Build-Plan-Template.md`
   - `Planning Template/Tech-Stack-Decision-Template.md`
@@ -27,13 +27,13 @@ This skill freezes Stage 1 only.
 
 Markdown:
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-1/markdown/Stage-1-Freeze-Review.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-1/markdown/Stage-1-Freeze-Review.md`
 
 JSON:
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-1/json/Stage-1-Freeze-Review.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-1/json/Stage-1-Freeze-Review.json`
+- updated `Build Plan/Active Plans/json/manifest.json`
+- updated `Build Plan/Active Plans/json/state.json`
 
 ## Instructions
 

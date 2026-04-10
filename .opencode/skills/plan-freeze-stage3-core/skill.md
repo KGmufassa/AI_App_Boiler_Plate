@@ -10,7 +10,7 @@ This skill freezes Stage 3 only.
 ## Inputs
 
 - Stage 3 outputs
-- metadata from `meta/json`
+- metadata from `Build Plan/Active Plans/json/`
 - Stage 3 template dependencies:
   - `Planning Template/Dynamic-Build-Plan-Template.md`
   - `Planning Template/Frontend-Experience-Decision-Template.md`
@@ -28,13 +28,13 @@ This skill freezes Stage 3 only.
 
 Markdown:
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-3/markdown/Stage-3-Freeze-Review.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-3/markdown/Stage-3-Freeze-Review.md`
 
 JSON:
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-3/json/Stage-3-Freeze-Review.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-3/json/Stage-3-Freeze-Review.json`
+- updated `Build Plan/Active Plans/json/manifest.json`
+- updated `Build Plan/Active Plans/json/state.json`
 
 ## Instructions
 

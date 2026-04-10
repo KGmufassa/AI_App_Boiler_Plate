@@ -10,7 +10,7 @@ This skill generates slice implementation plans only.
 ## Inputs
 
 - frozen Stage 1 through Stage 4 outputs
-- metadata from `meta/json`
+- metadata from `Build Plan/Active Plans/json/`
 - roadmap template dependencies:
   - `Planning Template/Build-Plan-Template-Index.md`
   - `Planning Template/Dynamic-Build-Plan-Template.md`
@@ -30,14 +30,14 @@ This skill generates slice implementation plans only.
 
 Markdown:
 
-- `Build Plan/Active Plans/<app_slug>/Slice Implementaion/markdown/Slice-Implementation-Index.md`
-- `Build Plan/Active Plans/<app_slug>/Slice Implementaion/markdown/Slice-<n>-<Outcome>-Implementation-Plan.md`
+- `Build Plan/Active Plans/Slice Implementaion/markdown/Slice-Implementation-Index.md`
+- `Build Plan/Active Plans/Slice Implementaion/markdown/Slice-<n>-<Outcome>-Implementation-Plan.md`
 
 JSON:
 
 - paired `.json` files for every markdown artifact above in sibling `json/`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- updated `Build Plan/Active Plans/json/manifest.json`
+- updated `Build Plan/Active Plans/json/state.json`
 
 ## Instructions
 

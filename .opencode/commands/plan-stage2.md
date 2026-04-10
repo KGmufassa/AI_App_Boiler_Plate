@@ -24,7 +24,7 @@ Optional behavior:
 
 - `app_name` or `app_slug`
 - Stage 1 frozen workspace
-- metadata from `meta/json`
+- metadata from `Build Plan/Active Plans/json/`
 
 ## Internal Skills
 
@@ -51,23 +51,23 @@ IF `--draft-only` is not set:
 
 Markdown:
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-2/markdown/Data-Schema-And-Domain-Model-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-2/markdown/Canonical-State-And-Math-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-2/markdown/API-And-Job-Contract-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-2/markdown/Runtime-Contract-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-2/markdown/Data-Schema-And-Domain-Model-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-2/markdown/Canonical-State-And-Math-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-2/markdown/API-And-Job-Contract-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-2/markdown/Runtime-Contract-Plan.md`
 
 Conditional markdown:
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-2/markdown/User-Personas-And-Jobs-To-Be-Done-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-2/markdown/Integration-And-External-Dependency-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-2/markdown/Security-And-Compliance-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-2/markdown/User-Personas-And-Jobs-To-Be-Done-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-2/markdown/Integration-And-External-Dependency-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-2/markdown/Security-And-Compliance-Plan.md`
 
 JSON:
 
 - paired `.json` artifacts for every markdown file above in sibling `json/`
-- updated metadata in `meta/json`
+- updated `Build Plan/Active Plans/json/manifest.json` and `Build Plan/Active Plans/json/state.json`
 
 Freeze review outputs when not in `--draft-only` mode:
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-2/markdown/Stage-2-Freeze-Review.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-2/json/Stage-2-Freeze-Review.json`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-2/markdown/Stage-2-Freeze-Review.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-2/json/Stage-2-Freeze-Review.json`

@@ -32,12 +32,12 @@ It must not:
 
 ### Required Workspace Inputs
 
-- `Build Plan/Active Plans/<app_slug>/PRDs/markdown/App-Idea-Intake.md`
-- `Build Plan/Active Plans/<app_slug>/PRDs/json/App-Idea-Intake.json`
-- `Build Plan/Active Plans/<app_slug>/PRDs/markdown/Product-Requirements-Document.md`
-- `Build Plan/Active Plans/<app_slug>/PRDs/json/Product-Requirements-Document.json`
-- `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- `Build Plan/Active Plans/PRDs/markdown/App-Idea-Intake.md`
+- `Build Plan/Active Plans/PRDs/json/App-Idea-Intake.json`
+- `Build Plan/Active Plans/PRDs/markdown/Product-Requirements-Document.md`
+- `Build Plan/Active Plans/PRDs/json/Product-Requirements-Document.json`
+- `Build Plan/Active Plans/json/manifest.json`
+- `Build Plan/Active Plans/json/state.json`
 
 ### Reference Templates
 
@@ -57,32 +57,32 @@ It must not:
 
 ### Markdown
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-1/markdown/MVP-Scope-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-1/markdown/Tech-Stack-Decision-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-1/markdown/Decision-Log-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-1/markdown/Dependency-Gate-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-1/markdown/Unified-Architecture-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-1/markdown/MVP-Scope-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-1/markdown/Tech-Stack-Decision-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-1/markdown/Decision-Log-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-1/markdown/Dependency-Gate-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-1/markdown/Unified-Architecture-Plan.md`
 
 Conditional markdown:
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-1/markdown/Business-Model-And-Pricing-Plan.md` if commercial mode is active
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-1/markdown/Business-Model-And-Pricing-Plan.md` if commercial mode is active
 
 ### JSON
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-1/json/MVP-Scope-Plan.json`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-1/json/Tech-Stack-Decision-Plan.json`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-1/json/Decision-Log-Plan.json`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-1/json/Dependency-Gate-Plan.json`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-1/json/Unified-Architecture-Plan.json`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-1/json/MVP-Scope-Plan.json`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-1/json/Tech-Stack-Decision-Plan.json`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-1/json/Decision-Log-Plan.json`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-1/json/Dependency-Gate-Plan.json`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-1/json/Unified-Architecture-Plan.json`
 
 Conditional JSON:
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-1/json/Business-Model-And-Pricing-Plan.json` if commercial mode is active
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-1/json/Business-Model-And-Pricing-Plan.json` if commercial mode is active
 
 ### Metadata
 
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- updated `Build Plan/Active Plans/json/manifest.json`
+- updated `Build Plan/Active Plans/json/state.json`
 
 ---
 
@@ -164,7 +164,8 @@ Before finishing, verify:
 - all required markdown artifacts exist and are non-empty
 - all required JSON artifacts exist and are non-empty
 - manifest and state are valid JSON
-- output files remain inside Stage 1 and `meta/json`
+- Stage 1 artifacts remain inside `Build Plan/Active Plans/1-4 Stage Planning/Stage-1`
+- manifest and state remain inside `Build Plan/Active Plans/json`
 
 ---
 

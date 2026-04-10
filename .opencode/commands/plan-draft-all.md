@@ -14,7 +14,7 @@ It must reuse the stage-specific command logic and must not bypass stage gates.
 ## Inputs
 
 - `app_name` or `app_slug`
-- initialized planning workspace under `Build Plan/Active Plans/<app_slug>/`
+- initialized planning workspace under `Build Plan/Active Plans/`
 
 ## Execution Flow
 
@@ -39,13 +39,13 @@ If any stage fails:
 
 Markdown:
 
-- `Build Plan/Active Plans/<app_slug>/meta/markdown/plan-draft-all-report.md`
+- `Build Plan/Active Plans/markdown/plan-draft-all-report.md`
 
 JSON:
 
-- `Build Plan/Active Plans/<app_slug>/meta/json/plan-draft-all-report.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- `Build Plan/Active Plans/json/plan-draft-all-report.json`
+- updated `Build Plan/Active Plans/json/manifest.json`
+- updated `Build Plan/Active Plans/json/state.json`
 
 ## Constraints
 

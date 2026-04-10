@@ -1,85 +1,104 @@
 ---
-Name: execute-agent-builds (EXECUTABLE DIRECTIVE)
-Description: The Execute-Agent-Builds command, executes canonical plans from the planner, routes tasks to dynamically created agents, runs multi-skill pipelines deterministically, enforces dependencies, and produces traceable, auditable outputs with metrics, logs, and replay support.
-Agent: Build
+Name: execute-agent-builds
+Description: Execute canonical ticket plans from agent-task-builder by loading generated agent markdown specs from `.opencode/agents`, routing tickets to assigned agents, enforcing dependencies, and producing traceable execution outputs.
+Agent: build
 subtask: false
 ---
-Source doc: 
--  FILE PATH: `system/references/reports/agent-build-report.json`
+
+Source files:
+
+- agent build report: `Build Plan/Active Plans/Agent Builds/json/agent-build-report.json`
+- agent definitions: `Build Plan/Active Plans/Agent Builds/json/agents.json`
+- execution graph: `Build Plan/Active Plans/Agent Builds/json/execution-plan.json`
+- ticket routing: `Build Plan/Active Plans/Agent Builds/json/ticket-routing.json`
+- agent markdown specs: `.opencode/agents/<agent-name>.md`
 
 ---
-# Command: 
-
-- EXECUTE ANGENT BUILDS (FINAL v4 — PRODUCTION-GRADE EXECUTION ENGINE)
 
 ## SYSTEM ROLE
 
-You are an **Execution Engine with Full Trace, Audit, and Parallel Tracking**.
+You are an Execution Engine with trace, audit, and dependency tracking.
 
 Your job is to:
-- execute a canonical execution_plan
-- route tasks to dynamically created agents
+
+- execute a canonical ticket-based execution plan
+- load generated agent specs from `.opencode/agents/<agent-name>.md`
+- route tickets to their assigned agents
 - execute agent-owned skill pipelines
-- enforce execution order and dependencies
-- use run-subtask-skill.md for controlled execution
-- capture full execution trace
-- provide audit trail, metrics, replay, and persistence
+- enforce ticket dependencies
+- preserve assigned agents and ticket routing
+- capture trace, logs, metrics, and audit output
 
----
-
-## TRACE OUTPUT CONFIGURATION (USER-DEFINED)
-```
-{
-  "trace_config": {
-    "trace_output_path": "///{execution_id}.json",
-    "log_output_path": "<DEFINE_PATH>",
-    "metrics_output_path": "<DEFINE_PATH>",
-    "persist": true
-  }
-}
-```
 ---
 
 ## INPUT
-```
+
+Direct input:
+
+```json
 {
   "agent_config": {},
   "execution_plan": [],
   "subagents": [],
-  "task_routing": {},
+  "ticket_routing": {},
   "diagnostics": {},
+  "reports": {
+    "json": "Build Plan/Active Plans/Agent Builds/json/agent-build-report.json",
+    "agents": "Build Plan/Active Plans/Agent Builds/json/agents.json",
+    "agent_markdown_dir": ".opencode/agents/",
+    "execution_plan": "Build Plan/Active Plans/Agent Builds/json/execution-plan.json",
+    "ticket_routing": "Build Plan/Active Plans/Agent Builds/json/ticket-routing.json"
+  },
   "trace_config": {}
 }
 ```
-OR
-```
+
+File input:
+
+```json
 {
-  "source": "agent-build-report.json",
+  "source": "Build Plan/Active Plans/Agent Builds/json/agent-build-report.json",
   "trace_config": {}
 }
 ```
----
-
-## GLOBAL RULES
-
-1. MUST respect assigned_agent  
-2. MUST NOT reassign tasks  
-3. MUST enforce execution_order  
-4. MUST log ALL steps  
-5. MUST track agent + skill execution  
-6. MUST support parallel execution tracking  
-7. MUST generate audit trail  
 
 ---
 
-# EXECUTION PIPELINE
+## HARD RULES
+
+1. Do not modify `execution_plan`.
+2. Do not reassign tickets.
+3. Do not reassign agents.
+4. Do not invent missing agent specs.
+5. Every assigned agent must have either a primary-agent config or a matching `.opencode/agents/<agent-name>.md` file.
+6. Execute tickets only after dependencies complete.
+7. Track agent and skill execution for every ticket.
+8. Always return valid JSON only.
 
 ---
 
-## STEP 1: INITIALIZE SYSTEM
+## TRACE OUTPUT CONFIGURATION
+
+```json
+{
+  "trace_config": {
+    "trace_output_path": "Build Plan/Active Plans/Agent Builds/json/traces/<execution_id>.json",
+    "log_output_path": "Build Plan/Active Plans/Agent Builds/json/logs/<execution_id>.json",
+    "metrics_output_path": "Build Plan/Active Plans/Agent Builds/json/metrics/<execution_id>.json",
+    "persist": true
+  }
+}
+```
+
+---
+
+## EXECUTION PIPELINE
+
+### STEP 1: INITIALIZE SYSTEM
 
 Generate:
-```
+
+```json
 {
   "execution_id": "uuid",
   "start_time": "timestamp",
@@ -88,49 +107,64 @@ Generate:
   "logs": [],
   "metrics": {},
   "agent_summary": {},
-  "task_summary": {}
+  "ticket_summary": {}
 }
 ```
----
 
-## STEP 2: BUILD AGENT RUNTIME
-```
+### STEP 2: LOAD AGENT RUNTIME
+
+Load:
+
+- `Build Plan/Active Plans/Agent Builds/json/agents.json`
+- `.opencode/agents/<agent-name>.md` for every generated subagent
+- `Build Plan/Active Plans/Agent Builds/json/ticket-routing.json`
+- `Build Plan/Active Plans/Agent Builds/json/execution-plan.json`
+
+Build:
+
+```json
 {
   "agent_runtime": {
     "agent_name": {
-      "skills": []
+      "skills": [],
+      "agent_spec": ".opencode/agents/<agent-name>.md",
+      "assigned_ticket_ids": []
     }
   }
 }
 ```
-Initialize agent_summary:
-```
+
+Initialize:
+
+```json
 {
   "agent_summary": {
     "agent_name": {
-      "tasks_completed": 0,
-      "tasks_failed": 0,
+      "tickets_completed": 0,
+      "tickets_failed": 0,
       "total_steps": 0
     }
   }
 }
 ```
----
 
-# STEP 3: DEPENDENCY RESOLUTION
+### STEP 3: RESOLVE DEPENDENCIES
 
-Tasks execute only when dependencies complete
+Tickets execute only when all dependency ticket IDs are complete.
 
----
+Rules:
 
-# STEP 4: EXECUTION LOOP
+- dependency IDs must reference tickets in `execution_plan`
+- blocked tickets stay pending until dependencies complete
+- invalid dependencies fail validation before execution
 
-FOR EACH task:
+### STEP 4: EXECUTE TICKETS
 
-Initialize:
-```
+For each executable ticket:
+
+```json
 {
-  "task_id": "",
+  "ticket_id": "",
   "agent": "",
   "status": "pending",
   "start_time": "",
@@ -138,57 +172,33 @@ Initialize:
   "duration_ms": 0
 }
 ```
----
 
-### IDENTIFY AGENT
+Identify:
 
-agent = task.assigned_agent
+- `agent = ticket.assigned_agent`
+- `skills = agent_runtime[agent].skills`
+- `agent_spec = agent_runtime[agent].agent_spec`
 
----
+Inline execution:
 
-### PARALLEL GROUP DETECTION
+- use only for tickets assigned to `primary-agent`
+- log trace
 
-IF task is parallel:
-    assign:
-```
-{
-  "parallel_group_id": "group-X"
-}
-```
----
+Controlled or flexible execution:
 
-### CASE 1: INLINE
+- execute via assigned generated agent
+- use the markdown spec from `.opencode/agents/<agent-name>.md` as agent operating context
+- use assigned skills from `agents.json`
+- log trace
 
-- execute in primary-agent  
-- log trace  
+### STEP 5: LOG SKILL PIPELINE
 
----
+For each skill step:
 
-### CASE 2: CONTROLLED
-
-CALL:
-
-`run-subtask-skill.md`
-
-WITH:
-```
-{
-  "skills": agent_runtime[agent].skills,
-  "execution_order": task.execution_order,
-  "context": "isolated"
-}
-```
----
-
-### MULTI-SKILL PIPELINE
-
-FOR EACH skill:
-
-LOG:
-```
+```json
 {
   "execution_id": "",
-  "task_id": "",
+  "ticket_id": "",
   "agent": "",
   "parallel_group_id": "",
   "step_id": "",
@@ -200,30 +210,24 @@ LOG:
   "duration_ms": 0
 }
 ```
-UPDATE:
-- agent_summary  
-- task_summary  
 
----
+Update:
 
-### CASE 3: FLEXIBLE
+- `agent_summary`
+- `ticket_summary`
 
-- execute via agent  
-- log trace  
+### STEP 6: HANDLE ERRORS
 
----
+On failure:
 
-# STEP 5: ERROR HANDLING
+1. retry once if recoverable
+2. fallback only if allowed by the ticket plan
+3. log error
 
-IF failure:
-
-1. retry once  
-2. fallback  
-3. log:
-```
+```json
 {
   "execution_id": "",
-  "task_id": "",
+  "ticket_id": "",
   "agent": "",
   "error": {
     "type": "",
@@ -233,17 +237,18 @@ IF failure:
   }
 }
 ```
-UPDATE:
-- agent_summary.tasks_failed += 1  
 
----
+Update:
 
-# STEP 6: COMPLETION TRACKING
+- `agent_summary[agent].tickets_failed += 1`
 
-FOR EACH task:
-```
+### STEP 7: TRACK COMPLETION
+
+For each completed ticket:
+
+```json
 {
-  "task_id": "",
+  "ticket_id": "",
   "agent": "",
   "status": "completed",
   "start_time": "",
@@ -251,87 +256,79 @@ FOR EACH task:
   "duration_ms": 0
 }
 ```
-UPDATE:
-- agent_summary.tasks_completed += 1  
 
----
+Update:
 
-# STEP 7: TRACE LOGGING
+- `agent_summary[agent].tickets_completed += 1`
 
-All steps appended to:
-```
-{
-  "trace": []
-}
-```
-Trace MUST include:
-- execution_id  
-- task_id  
-- agent  
-- parallel_group_id  
-- step_id  
-- skill  
-- input/output  
-- status  
-- timestamp  
-- duration  
+### STEP 8: WRITE TRACE, LOGS, AND METRICS
 
----
+Trace entries must include:
 
-# STEP 8: METRICS
-```
+- execution_id
+- ticket_id
+- agent
+- parallel_group_id
+- step_id
+- skill
+- input/output
+- status
+- timestamp
+- duration
+
+Metrics:
+
+```json
 {
   "metrics": {
     "execution_time_ms": 0,
-    "total_tasks": 0,
-    "completed_tasks": 0,
-    "failed_tasks": 0,
+    "total_tickets": 0,
+    "completed_tickets": 0,
+    "failed_tickets": 0,
     "steps_count": 0,
     "success_rate": 0
   }
 }
 ```
----
 
-# STEP 9: OUTPUT PERSISTENCE
+If `persist == true`, write:
 
-IF persist == true:
+- trace to `trace_output_path`
+- logs to `log_output_path`
+- metrics to `metrics_output_path`
 
-WRITE:
-- trace → trace_output_path  
-- logs → log_output_path  
-- metrics → metrics_output_path  
+### STEP 9: GENERATE AUDIT
 
----
-
-# STEP 10: AUDIT TRAIL
-```
+```json
 {
   "audit": {
     "execution_id": "",
     "created_at": "",
     "created_by": "execute-agent-builds",
-    "version": "v4",
+    "version": "ticket-agent-v1",
     "input_source": "direct | file",
+    "agent_specs_dir": ".opencode/agents/",
     "total_agents": 0,
-    "total_tasks": 0
+    "total_tickets": 0
   }
 }
 ```
+
 ---
 
-# STEP 11: FINAL OUTPUT
+## FINAL OUTPUT
 
-RETURN ONLY:
-```
+Return only:
+
+```json
 {
   "execution_summary": {
-    "total_tasks": 0,
+    "total_tickets": 0,
     "completed": 0,
     "failed": 0
   },
   "agent_summary": {},
-  "task_summary": {},
+  "ticket_summary": {},
   "trace": [],
   "logs": [],
   "metrics": {},
@@ -346,21 +343,17 @@ RETURN ONLY:
   }
 }
 ```
----
-
-## HARD CONSTRAINTS
-
-- DO NOT modify execution_plan  
-- DO NOT reassign agents  
-- DO NOT skip trace entries  
-- DO NOT skip audit generation  
-- DO NOT output explanations  
-- ALWAYS return valid JSON  
 
 ---
 
-## END COMMAND
-- ALWAYS return valid JSON
+## OUTPUT CONSTRAINTS
+
+- return valid JSON only
+- do not output explanations
+- do not skip trace entries
+- do not skip audit generation
+- do not reassign agents
+- do not reassign tickets
 
 ---
 

@@ -10,7 +10,7 @@ This skill freezes Stage 4 only.
 ## Inputs
 
 - Stage 4 outputs
-- metadata from `meta/json`
+- metadata from `Build Plan/Active Plans/json/`
 - Stage 4 template dependencies:
   - `Planning Template/Dynamic-Build-Plan-Template.md`
   - `Planning Template/Operations-And-Support-Template.md`
@@ -30,13 +30,13 @@ This skill freezes Stage 4 only.
 
 Markdown:
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-4/markdown/Stage-4-Freeze-Review.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-4/markdown/Stage-4-Freeze-Review.md`
 
 JSON:
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-4/json/Stage-4-Freeze-Review.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-4/json/Stage-4-Freeze-Review.json`
+- updated `Build Plan/Active Plans/json/manifest.json`
+- updated `Build Plan/Active Plans/json/state.json`
 
 ## Instructions
 

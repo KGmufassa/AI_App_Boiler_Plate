@@ -13,7 +13,7 @@ This command generates implementation tickets after task lists exist.
 
 - `app_name` or `app_slug`
 - task list outputs
-- metadata from `meta/json`
+- metadata from `Build Plan/Active Plans/json/`
 
 ## Execution Flow
 
@@ -31,12 +31,12 @@ Skill:
 
 Markdown:
 
-- `Build Plan/Active Plans/<app_slug>/Implementation Tickets/markdown/Implementation-Tickets-Index.md`
-- `Build Plan/Active Plans/<app_slug>/Implementation Tickets/markdown/Slice-<n>-Tickets.md`
+- `Build Plan/Active Plans/Implementation Tickets/markdown/Implementation-Tickets-Index.md`
+- `Build Plan/Active Plans/Implementation Tickets/markdown/Slice-<n>-Tickets.md`
 
 JSON:
 
-- `Build Plan/Active Plans/<app_slug>/Implementation Tickets/json/Implementation-Tickets-Index.json`
-- `Build Plan/Active Plans/<app_slug>/Implementation Tickets/json/Slice-<n>-Tickets.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- `Build Plan/Active Plans/Implementation Tickets/json/Implementation-Tickets-Index.json`
+- `Build Plan/Active Plans/Implementation Tickets/json/Slice-<n>-Tickets.json`
+- updated `Build Plan/Active Plans/json/manifest.json`
+- updated `Build Plan/Active Plans/json/state.json`

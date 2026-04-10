@@ -10,7 +10,7 @@ This skill drafts Stage 3 only.
 ## Inputs
 
 - Stage 2 frozen workspace
-- metadata from `meta/json`
+- metadata from `Build Plan/Active Plans/json/`
 - exact Stage 3 template dependencies:
   - `Planning Template/Dynamic-Build-Plan-Template.md`
   - `Planning Template/Frontend-Experience-Decision-Template.md`
@@ -28,22 +28,22 @@ This skill drafts Stage 3 only.
 
 Markdown:
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-3/markdown/Primary-UX-And-Interaction-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-3/markdown/Frontend-Experience-Decision-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-3/markdown/Component-System-Decision-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-3/markdown/State-And-History-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-3/markdown/Fallback-And-Recovery-UX-Plan.md`
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-3/markdown/Artifact-Or-Output-Lifecycle-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-3/markdown/Primary-UX-And-Interaction-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-3/markdown/Frontend-Experience-Decision-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-3/markdown/Component-System-Decision-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-3/markdown/State-And-History-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-3/markdown/Fallback-And-Recovery-UX-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-3/markdown/Artifact-Or-Output-Lifecycle-Plan.md`
 
 Conditional markdown:
 
-- `Build Plan/Active Plans/<app_slug>/1-4 Stage Planning/Stage-3/markdown/Analytics-And-Success-Metrics-Plan.md`
+- `Build Plan/Active Plans/1-4 Stage Planning/Stage-3/markdown/Analytics-And-Success-Metrics-Plan.md`
 
 JSON:
 
 - paired `.json` files for every markdown artifact above in sibling `json/`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- updated `Build Plan/Active Plans/json/manifest.json`
+- updated `Build Plan/Active Plans/json/state.json`
 
 ## Instructions
 

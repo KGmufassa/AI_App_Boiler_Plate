@@ -10,7 +10,7 @@ This skill generates implementation tickets only.
 ## Inputs
 
 - task list outputs
-- metadata from `meta/json`
+- metadata from `Build Plan/Active Plans/json/`
 - execution template dependencies:
   - `Planning Template/Build-Plan-Template-Index.md`
   - `Planning Template/Dynamic-Build-Plan-Template.md`
@@ -26,14 +26,14 @@ This skill generates implementation tickets only.
 
 Markdown:
 
-- `Build Plan/Active Plans/<app_slug>/Implementation Tickets/markdown/Implementation-Tickets-Index.md`
-- `Build Plan/Active Plans/<app_slug>/Implementation Tickets/markdown/Slice-<n>-Tickets.md`
+- `Build Plan/Active Plans/Implementation Tickets/markdown/Implementation-Tickets-Index.md`
+- `Build Plan/Active Plans/Implementation Tickets/markdown/Slice-<n>-Tickets.md`
 
 JSON:
 
 - paired `.json` files for every markdown artifact above in sibling `json/`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/manifest.json`
-- updated `Build Plan/Active Plans/<app_slug>/meta/json/state.json`
+- updated `Build Plan/Active Plans/json/manifest.json`
+- updated `Build Plan/Active Plans/json/state.json`
 
 ## Instructions
 
