@@ -2,7 +2,7 @@
 
 Generated from `.opencode/skills`.
 
-- [Mapping-Ux-flows](../../.opencode/skills/Mapping-Ux-flows/SKILL.md)
+- [Mapping-Ux-flows](/.opencode/skills/Mapping-Ux-flows/SKILL.md)
 - [Test-driven-development](../../.opencode/skills/Test-driven-development/SKILL.md)
 - [Wireframe-generator](../../.opencode/skills/Wireframe-generator/SKILL.md)
 - [debugging-wizard](../../.opencode/skills/debugging-wizard/SKILL.md)
