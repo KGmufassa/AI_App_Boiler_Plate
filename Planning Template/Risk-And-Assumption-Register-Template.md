@@ -39,6 +39,10 @@ For each risk, define:
 - likelihood:
 - impact:
 - early warning signs:
+- recommended response strategy:
+- recommended first action:
+- recommended execution timing:
+- why this is the most efficient response:
 - mitigation plan:
 - fallback plan:
 - owner:
@@ -61,6 +65,9 @@ For each risk, define:
 - which risks shape slice order:
 - which risks require mock-first planning:
 - which risks require budget or scope protection:
+- which risks must be resolved before stage freeze:
+- which risks can be accepted temporarily with monitoring:
+- which risks require an explicit recommended response before implementation begins:
 
 ---
 
@@ -78,6 +85,8 @@ The register is considered usable when:
 
 - high-impact assumptions are named
 - top risks have mitigation plans
+- top risks have a recommended response strategy
+- risks that block stage freeze are identified
 - slice order reflects the highest risks first
 
 This document should remain active during implementation rather than staying permanently frozen.

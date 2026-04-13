@@ -39,6 +39,10 @@ It must not:
 - `Planning Template/App-Idea-Intake-Template.md`
 - `Planning Template/Dynamic-Build-Plan-Template.md`
 - `Planning Template/Tech-Stack-Decision-Template.md`
+- `Planning Template/Stage-1-Dynamic-Questionnaire-Template.md`
+- `Planning Template/Stage-2-Dynamic-Questionnaire-Template.md`
+- `Planning Template/Stage-3-Dynamic-Questionnaire-Template.md`
+- `Planning Template/Stage-4-Dynamic-Questionnaire-Template.md`
 - `Planning Template/Frontend-Experience-Decision-Template.md`
 - `Planning Template/Component-System-Decision-Template.md`
 - `Planning Template/Business-Model-And-Pricing-Template.md`
@@ -55,6 +59,10 @@ It must not:
 - `Planning Template/App-Idea-Intake-Template.md`
 - `Planning Template/Dynamic-Build-Plan-Template.md`
 - `Planning Template/Tech-Stack-Decision-Template.md`
+- `Planning Template/Stage-1-Dynamic-Questionnaire-Template.md`
+- `Planning Template/Stage-2-Dynamic-Questionnaire-Template.md`
+- `Planning Template/Stage-3-Dynamic-Questionnaire-Template.md`
+- `Planning Template/Stage-4-Dynamic-Questionnaire-Template.md`
 - `Planning Template/Frontend-Experience-Decision-Template.md`
 - `Planning Template/Component-System-Decision-Template.md`
 - `Planning Template/Business-Model-And-Pricing-Template.md`
@@ -102,8 +110,8 @@ IF `planning_path` missing:
 
 - `Build Plan/Active Plans/PRDs/json/App-Idea-Intake.json`
 - `Build Plan/Active Plans/PRDs/json/Product-Requirements-Document.json`
-- `Build Plan/Active Plans/json/manifest.json`
-- `Build Plan/Active Plans/json/state.json`
+- `Build Plan/Active Plans/status-report/json/manifest.json`
+- `Build Plan/Active Plans/status-report/json/state.json`
 
 ---
 
@@ -117,6 +125,12 @@ IF `planning_path` missing:
   "slug": "",
   "planning_path": "lean",
   "active_templates": [],
+  "stage_seed_inputs": {
+    "stage_1": {},
+    "stage_2": {},
+    "stage_3": {},
+    "stage_4": {}
+  },
   "commercial_mode": false,
   "current_stage": "planning_path_selected",
   "frozen_stages": [],
@@ -126,8 +140,8 @@ IF `planning_path` missing:
     "PRDs/markdown/Product-Requirements-Document.md",
     "PRDs/json/App-Idea-Intake.json",
     "PRDs/json/Product-Requirements-Document.json",
-    "json/manifest.json",
-    "json/state.json"
+    "status-report/json/manifest.json",
+    "status-report/json/state.json"
   ]
 }
 ```
@@ -163,7 +177,7 @@ Load at minimum:
 - `Planning Template/App-Idea-Intake-Template.md`
 - `Planning Template/Dynamic-Build-Plan-Template.md`
 
-Use the remaining exact templates only to decide which downstream planning documents must be activated in the manifest.
+Use the remaining exact templates only to decide which downstream planning documents and stage questionnaire dependencies must be activated in the manifest.
 
 ### Step 2 — Normalize The App Idea
 
@@ -179,6 +193,7 @@ From the input, derive:
 - non-goals
 - constraint summary
 - planning path
+- lightweight stage seed inputs for Stage 1 through Stage 4 using the stage questionnaire templates as future-stage references
 
 ### Step 3 — Activate Templates
 
@@ -187,6 +202,10 @@ Always activate:
 - `App-Idea-Intake-Template`
 - `Dynamic-Build-Plan-Template`
 - `Tech-Stack-Decision-Template`
+- `Stage-1-Dynamic-Questionnaire-Template`
+- `Stage-2-Dynamic-Questionnaire-Template`
+- `Stage-3-Dynamic-Questionnaire-Template`
+- `Stage-4-Dynamic-Questionnaire-Template`
 - `Frontend-Experience-Decision-Template`
 - `Component-System-Decision-Template`
 
@@ -237,6 +256,7 @@ Write a manifest that records:
 - identity
 - planning path
 - active templates
+- stage seed inputs
 - current stage
 - generated artifacts
 

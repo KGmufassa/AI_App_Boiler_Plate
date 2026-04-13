@@ -24,7 +24,7 @@ flowchart TD
     K[skill-registry-builder] --> L[agent-task-builder]
     J --> L
 
-    L --> M[execute-agent-builds]
+    L --> M[execute-agents]
 ```
 
 ## Inspection Path
@@ -61,4 +61,4 @@ flowchart TD
 - `plan-slices` starts only after Stage 4 is complete.
 - `plan-tickets` feeds `agent-task-builder`.
 - `skill-registry-builder` is a prerequisite input provider for `agent-task-builder`.
-- `execute-agent-builds` runs only after agent build artifacts exist.
+- `execute-agents` runs only after agent build artifacts exist.

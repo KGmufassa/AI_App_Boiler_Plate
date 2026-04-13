@@ -5,12 +5,12 @@ Description: Sequential freeze skill for Stage 2. Reconciles contract artifacts,
 
 ## Purpose
 
-This skill freezes Stage 2 only.
+This skill freezes Stage 2 only, but only after explicit user confirmation of the generated freeze review.
 
 ## Inputs
 
 - Stage 2 outputs
-- metadata from `Build Plan/Active Plans/json/`
+- metadata from `Build Plan/Active Plans/status-report/json/`
 - Stage 2 template dependencies:
   - `Planning Template/Dynamic-Build-Plan-Template.md`
   - `Planning Template/User-Personas-And-Jobs-To-Be-Done-Template.md`
@@ -33,8 +33,8 @@ Markdown:
 JSON:
 
 - `Build Plan/Active Plans/1-4 Stage Planning/Stage-2/json/Stage-2-Freeze-Review.json`
-- updated `Build Plan/Active Plans/json/manifest.json`
-- updated `Build Plan/Active Plans/json/state.json`
+- updated `Build Plan/Active Plans/status-report/json/manifest.json`
+- updated `Build Plan/Active Plans/status-report/json/state.json`
 
 ## Instructions
 
@@ -44,5 +44,21 @@ JSON:
   - `Planning Template/User-Personas-And-Jobs-To-Be-Done-Template.md` when personas/JTBD is active
   - `Planning Template/Integration-And-External-Dependency-Template.md` when integrations are active
   - `Planning Template/Security-And-Compliance-Template.md` when security/compliance is active
+- write `Stage-2-Freeze-Review.md` and `Stage-2-Freeze-Review.json` before locking
+- stop and prompt the user to review the Stage 2 freeze review output
+- require explicit user confirmation that the freeze review and Stage 2 outputs are correct before freezing
 - fail on unresolved contradictions
+
+Only after user confirmation:
+
 - set state to `stage_2_frozen`
+- set next valid commands to Stage 3 drafting or status
+- prompt the user whether to proceed to the next Stage command:
+  - `plan-stage3`
+  - or stop after Stage 2 freeze
+
+If the user does not confirm:
+
+- do not set Stage 2 to frozen
+- do not lock the stage
+- return control for revisions

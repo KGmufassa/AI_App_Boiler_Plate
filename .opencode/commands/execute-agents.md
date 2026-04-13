@@ -1,5 +1,5 @@
 ---
-Name: execute-agent-builds
+Name: execute-agents
 Description: Execute canonical ticket plans from agent-task-builder by loading generated agent markdown specs from `.opencode/agents`, routing tickets to assigned agents, enforcing dependencies, and producing traceable execution outputs.
 Agent: build
 subtask: false
@@ -25,6 +25,7 @@ Your job is to:
 - load generated agent specs from `.opencode/agents/<agent-name>.md`
 - route tickets to their assigned agents
 - execute agent-owned skill pipelines
+- check readiness from dependency state and project execution artifacts before starting each ticket
 - enforce ticket dependencies
 - preserve assigned agents and ticket routing
 - capture trace, logs, metrics, and audit output
@@ -71,7 +72,7 @@ File input:
 3. Do not reassign agents.
 4. Do not invent missing agent specs.
 5. Every assigned agent must have either a primary-agent config or a matching `.opencode/agents/<agent-name>.md` file.
-6. Execute tickets only after dependencies complete.
+6. Execute tickets only after dependencies complete and readiness checks pass.
 7. Track agent and skill execution for every ticket.
 8. Always return valid JSON only.
 
@@ -158,7 +159,34 @@ Rules:
 - blocked tickets stay pending until dependencies complete
 - invalid dependencies fail validation before execution
 
-### STEP 4: EXECUTE TICKETS
+### STEP 4: CHECK READINESS
+
+Before a ticket can start, evaluate its readiness contract from `execution_plan`.
+
+For each ticket, evaluate:
+
+```json
+{
+  "ticket_id": "",
+  "readiness": {
+    "dependency_ticket_ids": [],
+    "required_execution_artifacts": [],
+    "unblocked_conditions": [],
+    "ready_to_start": false,
+    "blocking_reasons": []
+  }
+}
+```
+
+Rules:
+
+- all `dependency_ticket_ids` must be completed
+- all `required_execution_artifacts` must exist or be present in prior execution outputs
+- every `unblocked_condition` must evaluate true before execution begins
+- if any readiness requirement fails, keep the ticket pending and record the blocking reason
+- do not execute a ticket whose readiness check returns `ready_to_start: false`
+
+### STEP 5: EXECUTE TICKETS
 
 For each executable ticket:
 
@@ -191,7 +219,7 @@ Controlled or flexible execution:
 - use assigned skills from `agents.json`
 - log trace
 
-### STEP 5: LOG SKILL PIPELINE
+### STEP 6: LOG SKILL PIPELINE
 
 For each skill step:
 
@@ -216,7 +244,7 @@ Update:
 - `agent_summary`
 - `ticket_summary`
 
-### STEP 6: HANDLE ERRORS
+### STEP 7: HANDLE ERRORS
 
 On failure:
 
@@ -242,7 +270,7 @@ Update:
 
 - `agent_summary[agent].tickets_failed += 1`
 
-### STEP 7: TRACK COMPLETION
+### STEP 8: TRACK COMPLETION
 
 For each completed ticket:
 
@@ -261,7 +289,7 @@ Update:
 
 - `agent_summary[agent].tickets_completed += 1`
 
-### STEP 8: WRITE TRACE, LOGS, AND METRICS
+### STEP 9: WRITE TRACE, LOGS, AND METRICS
 
 Trace entries must include:
 
@@ -297,14 +325,14 @@ If `persist == true`, write:
 - logs to `log_output_path`
 - metrics to `metrics_output_path`
 
-### STEP 9: GENERATE AUDIT
+### STEP 10: GENERATE AUDIT
 
 ```json
 {
   "audit": {
     "execution_id": "",
     "created_at": "",
-    "created_by": "execute-agent-builds",
+    "created_by": "execute-agents",
     "version": "ticket-agent-v1",
     "input_source": "direct | file",
     "agent_specs_dir": ".opencode/agents/",
@@ -332,6 +360,7 @@ Return only:
   "trace": [],
   "logs": [],
   "metrics": {},
+  "readiness_summary": {},
   "audit": {},
   "output_locations": {
     "trace": "<path>",

@@ -34,8 +34,8 @@ Markdown:
 JSON:
 
 - `Build Plan/Active Plans/json/plan-draft-all-report.json`
-- updated `Build Plan/Active Plans/json/manifest.json`
-- updated `Build Plan/Active Plans/json/state.json`
+- updated `Build Plan/Active Plans/status-report/json/manifest.json`
+- updated `Build Plan/Active Plans/status-report/json/state.json`
 
 ## Instructions
 

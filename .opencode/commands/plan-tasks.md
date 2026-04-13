@@ -38,5 +38,5 @@ JSON:
 
 - `Build Plan/Active Plans/Task List/json/Task-List-Index.json`
 - `Build Plan/Active Plans/Task List/json/Slice-<n>-Task-List.json`
-- updated `Build Plan/Active Plans/json/manifest.json`
-- updated `Build Plan/Active Plans/json/state.json`
+- updated `Build Plan/Active Plans/status-report/json/manifest.json`
+- updated `Build Plan/Active Plans/status-report/json/state.json`

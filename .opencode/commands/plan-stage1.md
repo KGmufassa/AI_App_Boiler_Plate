@@ -13,8 +13,9 @@ Default behavior:
 
 - draft Stage 1
 - reconcile Stage 1
-- validate freeze criteria
-- freeze Stage 1
+- generate Stage 1 freeze review
+- require user confirmation
+- freeze Stage 1 only after confirmation
 
 Optional behavior:
 
@@ -48,11 +49,25 @@ Invoke:
 
 - `plan-stage1-core`
 
-### Step 3 — Freeze Stage 1
+### Step 3 — Review Gate
+
+After drafting:
+
+- prompt the user to review the generated Stage 1 outputs
+- do not proceed to freeze review locking until the user confirms the Stage 1 output is correct
+
+### Step 4 — Freeze Stage 1
 
 IF `--draft-only` is not set:
 
 - invoke `plan-freeze-stage1-core`
+
+The freeze skill must:
+
+- generate the Stage 1 freeze review artifact
+- prompt the user to confirm the freeze review is correct
+- freeze and lock Stage 1 only after confirmation
+- then prompt whether to move to `plan-stage2`
 
 ## Required Outputs
 
@@ -71,8 +86,8 @@ Conditional markdown:
 JSON:
 
 - paired `.json` artifacts for every markdown file above in sibling `json/`
-- updated `Build Plan/Active Plans/json/manifest.json`
-- updated `Build Plan/Active Plans/json/state.json`
+- updated `Build Plan/Active Plans/status-report/json/manifest.json`
+- updated `Build Plan/Active Plans/status-report/json/state.json`
 
 Freeze review outputs when not in `--draft-only` mode:
 
@@ -84,3 +99,4 @@ Freeze review outputs when not in `--draft-only` mode:
 - do not write Stage 2 through Stage 4 artifacts
 - do not generate slices, tasks, or tickets
 - keep draft/freeze logic separate internally even though the command is combined
+- do not lock Stage 1 without explicit user confirmation

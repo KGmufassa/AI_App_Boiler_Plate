@@ -12,6 +12,7 @@ It is responsible only for:
 - generating Stage 1 planning artifacts
 - updating `manifest.json`
 - updating `state.json`
+- prompting for Stage 1 review before any freeze action occurs
 
 It must not:
 
@@ -36,20 +37,22 @@ It must not:
 - `Build Plan/Active Plans/PRDs/json/App-Idea-Intake.json`
 - `Build Plan/Active Plans/PRDs/markdown/Product-Requirements-Document.md`
 - `Build Plan/Active Plans/PRDs/json/Product-Requirements-Document.json`
-- `Build Plan/Active Plans/json/manifest.json`
-- `Build Plan/Active Plans/json/state.json`
+- `Build Plan/Active Plans/status-report/json/manifest.json`
+- `Build Plan/Active Plans/status-report/json/state.json`
 
 ### Reference Templates
 
 - `Planning Template/Dynamic-Build-Plan-Template.md`
 - `Planning Template/Tech-Stack-Decision-Template.md`
 - `Planning Template/Business-Model-And-Pricing-Template.md`
+- `Planning Template/Stage-1-Dynamic-Questionnaire-Template.md`
 
 ## Template Dependencies
 
 - `Planning Template/Dynamic-Build-Plan-Template.md`
 - `Planning Template/Tech-Stack-Decision-Template.md`
 - `Planning Template/Business-Model-And-Pricing-Template.md`
+- `Planning Template/Stage-1-Dynamic-Questionnaire-Template.md`
 
 ---
 
@@ -81,8 +84,8 @@ Conditional JSON:
 
 ### Metadata
 
-- updated `Build Plan/Active Plans/json/manifest.json`
-- updated `Build Plan/Active Plans/json/state.json`
+- updated `Build Plan/Active Plans/status-report/json/manifest.json`
+- updated `Build Plan/Active Plans/status-report/json/state.json`
 
 ---
 
@@ -107,6 +110,12 @@ Proceed only if:
 - required PRD artifacts exist
 
 ### Step 3 — Draft Stage 1 Artifacts
+
+Before drafting any unresolved Stage 1 section:
+
+- use `Planning Template/Stage-1-Dynamic-Questionnaire-Template.md` as the required dynamic clarification layer
+- derive as much as possible from the intake, PRD, manifest, and state before asking any question
+- ask only unresolved Stage 1 questions, one at a time, following the questionnaire stop rules
 
 Generate:
 
@@ -165,7 +174,27 @@ Before finishing, verify:
 - all required JSON artifacts exist and are non-empty
 - manifest and state are valid JSON
 - Stage 1 artifacts remain inside `Build Plan/Active Plans/1-4 Stage Planning/Stage-1`
-- manifest and state remain inside `Build Plan/Active Plans/json`
+- manifest and state remain inside `Build Plan/Active Plans/status-report/json`
+
+### Step 8 — Prompt For Review Before Freeze
+
+After validation succeeds:
+
+- stop before any freeze or locking action
+- instruct the user to review the generated Stage 1 outputs
+- tell the user that freeze review and locking must not proceed until they confirm the Stage 1 output is correct
+- prompt the user to either:
+  - confirm Stage 1 is ready for freeze review generation, or
+  - request changes to the Stage 1 outputs
+
+When the user confirms Stage 1 is ready:
+
+- the next action is `plan-freeze-stage1-core`
+
+When the user requests changes:
+
+- remain in Stage 1 drafting/review mode
+- do not advance to freeze
 
 ---
 
@@ -185,6 +214,7 @@ Before finishing, verify:
 - do not generate slices, tasks, or tickets
 - do not drift from the planning templates
 - always pair markdown and JSON outputs in sibling folders
+- do not ask to proceed to Stage 2 before Stage 1 freeze confirmation is complete
 
 ---
 

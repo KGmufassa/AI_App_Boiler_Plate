@@ -18,6 +18,7 @@ Your job is to:
 - construct agents dynamically when justified
 - assign skills to agents, not only to tickets
 - assign every ticket to exactly one agent
+- define ticket readiness checks from dependency and execution-artifact requirements
 - produce one canonical ticket execution plan
 
 ---
@@ -33,8 +34,9 @@ Your job is to:
 7. Create agents from grouped ticket work, not one agent per ticket by default.
 8. Preserve ticket dependencies and slice order before parallelizing work.
 9. Use subagents only when justified by scope, complexity, coupling, risk, or skill concentration.
-10. Output only valid JSON matching the final schema.
-11. Do not output reasoning, commentary, or intermediate artifacts unless they appear in the final schema.
+10. Every ticket must include a readiness check contract that can be evaluated before execution starts.
+11. Output only valid JSON matching the final schema.
+12. Do not output reasoning, commentary, or intermediate artifacts unless they appear in the final schema.
 
 ---
 
@@ -52,8 +54,8 @@ Fallback ticket inputs:
 
 Planning state inputs:
 
-- `Build Plan/Active Plans/json/manifest.json`
-- `Build Plan/Active Plans/json/state.json`
+- `Build Plan/Active Plans/status-report/json/manifest.json`
+- `Build Plan/Active Plans/status-report/json/state.json`
 
 Skill registry input:
 
@@ -282,6 +284,12 @@ Each execution plan entry must include:
   "mode": "",
   "required_skills": [],
   "dependencies": [],
+  "readiness_checks": {
+    "dependency_ticket_ids": [],
+    "required_execution_artifacts": [],
+    "unblocked_conditions": [],
+    "ready_to_start": false
+  },
   "acceptance_criteria": [],
   "can_run_in_parallel": false
 }
@@ -290,6 +298,10 @@ Each execution plan entry must include:
 Graph rules:
 
 - dependencies must reference valid `ticket_id` values
+- `readiness_checks.dependency_ticket_ids` must match the effective dependency list for the ticket
+- `required_execution_artifacts` must include any concrete prior outputs the ticket depends on when those outputs are named in the ticket or implied by the dependency chain
+- `unblocked_conditions` must describe what has to be true before the ticket can start
+- `ready_to_start` defaults to `false` in the planned output and is evaluated at execution time
 - `can_run_in_parallel` is true only when dependencies do not block execution
 - preserve slice order when dependencies are ambiguous
 - do not duplicate dependency information elsewhere
@@ -305,6 +317,7 @@ Validation must ensure:
 - no duplicate agent names exist
 - no invalid dependencies exist
 - no ticket depends on a missing ticket id
+- every ticket has a readiness check contract
 - every `ticket_routing` entry matches the execution plan
 
 If validation fails:
@@ -346,6 +359,7 @@ Each markdown agent spec must describe:
 - execution mode
 - responsibilities
 - dependency constraints
+- readiness check responsibilities
 - expected outputs
 - validation responsibilities
 
@@ -382,6 +396,12 @@ Output exactly one JSON object in this shape:
       "mode": "",
       "required_skills": [],
       "dependencies": [],
+      "readiness_checks": {
+        "dependency_ticket_ids": [],
+        "required_execution_artifacts": [],
+        "unblocked_conditions": [],
+        "ready_to_start": false
+      },
       "acceptance_criteria": [],
       "can_run_in_parallel": false
     }
@@ -396,6 +416,7 @@ Output exactly one JSON object in this shape:
     "unassigned_tickets": [],
     "duplicate_agents": [],
     "invalid_dependencies": [],
+    "readiness_gaps": [],
     "skills_not_found": [],
     "skill_fallbacks": []
   },

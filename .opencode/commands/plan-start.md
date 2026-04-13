@@ -30,6 +30,10 @@ This command must use these planning templates as references:
 - `Planning Template/App-Idea-Intake-Template.md`
 - `Planning Template/Dynamic-Build-Plan-Template.md`
 - `Planning Template/Tech-Stack-Decision-Template.md`
+- `Planning Template/Stage-1-Dynamic-Questionnaire-Template.md`
+- `Planning Template/Stage-2-Dynamic-Questionnaire-Template.md`
+- `Planning Template/Stage-3-Dynamic-Questionnaire-Template.md`
+- `Planning Template/Stage-4-Dynamic-Questionnaire-Template.md`
 - `Planning Template/Frontend-Experience-Decision-Template.md`
 - `Planning Template/Component-System-Decision-Template.md`
 
@@ -84,6 +88,14 @@ Required input groups:
 - launch measurement important or not
 - real user operations/support needed or not
 
+### 5. Stage Seed Inputs
+
+- delivery priority: fastest MVP, balanced, robust foundation
+- primary device priority if known: desktop-first, mobile-first, responsive parity, unknown
+- expected settings complexity: none, simple, category-based, advanced, unknown
+- data density expectation: light, balanced, dense, unknown
+- release rigor expectation: lightweight, standard, production-leaning, high-rigor, unknown
+
 ---
 
 ## Normalized Command Inputs
@@ -107,6 +119,24 @@ Required input groups:
     "team": "",
     "deployment": ""
   },
+  "stage_seed_inputs": {
+    "stage_1": {
+      "delivery_priority": ""
+    },
+    "stage_2": {
+      "integration_depth_hint": "",
+      "security_posture_hint": ""
+    },
+    "stage_3": {
+      "device_priority": "",
+      "settings_complexity": "",
+      "data_density_expectation": ""
+    },
+    "stage_4": {
+      "release_rigor": "",
+      "operations_expectation": ""
+    }
+  },
   "flags": {
     "commercial": false,
     "needs_integrations": false,
@@ -126,6 +156,7 @@ Required input groups:
 - validate required inputs exist
 - generate `app_slug`
 - infer planning path: `lean`, `standard`, or `extended`
+- derive stage seed inputs for Stage 1 through Stage 4 using the stage questionnaire templates as future planning references
 
 ### Step 2 — Invoke Skill
 
@@ -165,8 +196,8 @@ JSON:
 
 - `Build Plan/Active Plans/PRDs/json/App-Idea-Intake.json`
 - `Build Plan/Active Plans/PRDs/json/Product-Requirements-Document.json`
-- `Build Plan/Active Plans/json/manifest.json`
-- `Build Plan/Active Plans/json/state.json`
+- `Build Plan/Active Plans/status-report/json/manifest.json`
+- `Build Plan/Active Plans/status-report/json/state.json`
 
 ---
 

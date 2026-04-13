@@ -9,8 +9,8 @@ This skill reports current planning status only.
 
 ## Inputs
 
-- `Build Plan/Active Plans/json/manifest.json`
-- `Build Plan/Active Plans/json/state.json`
+- `Build Plan/Active Plans/status-report/json/manifest.json`
+- `Build Plan/Active Plans/status-report/json/state.json`
 - status references:
   - `Planning Template/Build-Plan-Template-Index.md`
   - `Planning Template/Command-Contract-Draft.md`
@@ -26,11 +26,11 @@ This skill reports current planning status only.
 
 Markdown:
 
-- `Build Plan/Active Plans/markdown/status-report.md`
+- `Build Plan/Active Plans/status-report/markdown/status-report.md`
 
 JSON:
 
-- `Build Plan/Active Plans/json/status-report.json`
+- `Build Plan/Active Plans/status-report/json/status-report.json`
 
 ## Instructions
 

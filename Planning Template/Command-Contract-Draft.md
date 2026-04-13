@@ -41,8 +41,8 @@ Examples:
 - `.../PRDs/json/Product-Requirements-Document.json`
 - `.../1-4 Stage Planning/Stage-1/markdown/MVP-Scope-Plan.md`
 - `.../1-4 Stage Planning/Stage-1/json/MVP-Scope-Plan.json`
-- `.../meta/json/manifest.json`
-- `.../meta/json/state.json`
+- `Build Plan/Active Plans/status-report/json/manifest.json`
+- `Build Plan/Active Plans/status-report/json/state.json`
 
 Command files should validate this layout.
 

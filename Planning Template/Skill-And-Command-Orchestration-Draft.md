@@ -44,8 +44,8 @@ For each app idea, create:
 Recommended workspace shape:
 
 - `Build Plan/Active Plans/<app-slug>/`
-- `Build Plan/Active Plans/<app-slug>/meta/json/manifest.json`
-- `Build Plan/Active Plans/<app-slug>/meta/json/state.json`
+- `Build Plan/Active Plans/status-report/json/manifest.json`
+- `Build Plan/Active Plans/status-report/json/state.json`
 - `Build Plan/Active Plans/<app-slug>/PRDs/`
 - `Build Plan/Active Plans/<app-slug>/1-4 Stage Planning/`
 - `Build Plan/Active Plans/<app-slug>/Slice Implementaion/`
@@ -67,8 +67,8 @@ Examples:
 - `Build Plan/Active Plans/<app-slug>/PRDs/json/Product-Requirements-Document.json`
 - `Build Plan/Active Plans/<app-slug>/1-4 Stage Planning/Stage-1/markdown/MVP-Scope-Plan.md`
 - `Build Plan/Active Plans/<app-slug>/1-4 Stage Planning/Stage-1/json/MVP-Scope-Plan.json`
-- `Build Plan/Active Plans/<app-slug>/meta/json/manifest.json`
-- `Build Plan/Active Plans/<app-slug>/meta/json/state.json`
+- `Build Plan/Active Plans/status-report/json/manifest.json`
+- `Build Plan/Active Plans/status-report/json/state.json`
 
 This convention should apply to:
 

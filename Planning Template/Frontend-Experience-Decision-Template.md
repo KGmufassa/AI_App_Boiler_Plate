@@ -77,22 +77,126 @@ Freeze the high-level structure:
 
 ---
 
-## 5. Page And Surface Inventory
+## 5. Canonical Page Inventory
 
-List the core surfaces the layout must support:
+Determine the complete page map required by the product features and workflows.
 
-- landing or entry surface:
-- onboarding or setup surface:
-- primary workspace:
-- detail or settings surface:
-- review or approval surface:
-- output, export, or publish surface:
-- error or recovery surface:
-- admin or internal surface if needed:
+This section must identify:
+
+- all main pages
+- all subpages
+- parent and child page relationships
+- route hierarchy
+- page purpose
+- primary entry points
+- primary exit paths
+- user roles allowed to access each page if relevant
+
+For each page or subpage, record:
+
+- page name:
+- page type: main page, subpage, detail page, settings page, modal route, drawer route, wizard step, or utility surface
+- parent page:
+- purpose:
+- primary feature supported:
+- entry points:
+- exit paths:
+- persistent context required:
+
+Minimum expected coverage:
+
+- landing or entry page if needed
+- onboarding or setup pages if needed
+- home or dashboard page if needed
+- primary workspace pages
+- detail pages
+- settings pages and settings subpages
+- review, approval, or publish pages if needed
+- output or export pages if needed
+- error or recovery pages if needed
+- admin or internal pages if needed
 
 ---
 
-## 6. Responsive Behavior Rules
+## 6. Clickable Component Inventory
+
+Determine all clickable or directly interactive components derived from the product features.
+
+Every major feature must map to one or more clickable components.
+
+For each page and subpage, list:
+
+- component name:
+- component type: nav item, button, icon button, tab, card action, table row, menu item, toggle, link, modal trigger, drawer trigger, or other
+- feature supported:
+- page location:
+- trigger action:
+- destination:
+- resulting state change:
+- backend dependency if applicable:
+- visibility rules:
+
+No clickable component should remain without a destination, state change, or explicit no-navigation explanation.
+
+---
+
+## 7. Subpage Derivation
+
+Determine which subpages are created from user interaction with clickable components.
+
+Subpages must be derived from real feature needs and interaction patterns, not invented arbitrarily.
+
+For each derived subpage, record:
+
+- subpage name:
+- parent page:
+- trigger component:
+- why the subpage exists:
+- navigation type: nested page, detail page, modal, drawer, tabbed surface, or wizard step
+- primary purpose:
+- return path:
+- state preserved from parent:
+
+Subpages should be derived from patterns such as:
+
+- detail and drill-down views
+- create or edit flows
+- settings categories
+- approval or review flows
+- advanced configuration surfaces
+- contextual object management
+
+---
+
+## 8. Page Structure And Component Placement
+
+Determine how components are structured on each main page and subpage.
+
+For each page and subpage, define:
+
+- header contents:
+- primary navigation:
+- secondary navigation:
+- main content zones:
+- sidebar, inspector, or supporting panel:
+- primary action area:
+- secondary action area:
+- status, feedback, or job area:
+- persistent components:
+- page-specific components:
+- required states on the page:
+
+The structure must make clear:
+
+- where the primary user action happens
+- where supporting actions live
+- where navigation belongs
+- how dense information is grouped
+- how shared components differ from page-local components
+
+---
+
+## 9. Responsive Behavior Rules
 
 - what collapses on smaller screens:
 - what remains pinned on larger screens:
@@ -103,7 +207,7 @@ List the core surfaces the layout must support:
 
 ---
 
-## 7. Visual Direction Options
+## 10. Visual Direction Options
 
 List the serious direction candidates only.
 
@@ -127,7 +231,7 @@ For each candidate, describe:
 
 ---
 
-## 8. Recommended Visual Direction
+## 11. Recommended Visual Direction
 
 Freeze the overall style:
 
@@ -142,7 +246,7 @@ Freeze the overall style:
 
 ---
 
-## 9. Core Visual System Decisions
+## 12. Core Visual System Decisions
 
 Define the starting point for:
 
@@ -161,7 +265,7 @@ Define the starting point for:
 
 ---
 
-## 10. Interface Rules
+## 13. Interface Rules
 
 - how primary actions should stand out:
 - how destructive actions should appear:
@@ -173,7 +277,7 @@ Define the starting point for:
 
 ---
 
-## 11. Accessibility Rules
+## 14. Accessibility Rules
 
 - accessibility baseline:
 - minimum contrast expectations:
@@ -182,7 +286,23 @@ Define the starting point for:
 
 ---
 
-## 12. Rejected Options
+## 15. Frontend Planning Implications
+
+- required route structure:
+- shared layout components:
+- shared clickable components:
+- reusable page shell requirements:
+- state that must survive navigation:
+- components that need responsive variants:
+- screens needing higher design investment:
+- accessibility risks introduced by the experience model:
+- page-to-component dependencies:
+- component-to-subpage dependencies:
+- artifact relationships affecting the interface:
+
+---
+
+## 16. Rejected Options
 
 Record rejected layout and visual direction options:
 
@@ -193,28 +313,24 @@ Record rejected layout and visual direction options:
 
 ---
 
-## 13. Frontend Planning Implications
-
-- required route structure:
-- shared layout components:
-- reusable page shell requirements:
-- state that must survive navigation:
-- components that need responsive variants:
-- screens needing higher design investment:
-- accessibility risks introduced by the experience model:
-
----
-
-## 14. Freeze Rule
+## 17. Freeze Rule
 
 The frontend experience is considered frozen when:
 
 - the general UI structure is approved
+- the canonical page inventory is complete
+- main pages and subpages are complete
+- clickable component inventory is complete
+- subpage derivation is complete
+- page structure and component placement are complete
 - the primary navigation model is approved
 - responsive behavior is defined
 - visual direction is approved
 - accessibility expectations are defined
 - the workflow plan and slice plans align with the chosen experience
+- every major feature maps to at least one page
+- every clickable component maps to a destination or state change
+- every subpage has a valid parent or standalone route logic
 
 If the frontend experience changes later, reopen:
 
