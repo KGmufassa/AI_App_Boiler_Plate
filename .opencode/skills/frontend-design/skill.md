@@ -1,5 +1,5 @@
 ---
-name: frontend-design-v2
+name: frontend-design
 description: Create distinctive, production-grade frontend interfaces with a clear aesthetic direction and high design quality. This skill generates real, working UI code while enforcing strong design systems, avoiding generic AI aesthetics, and maintaining engineering best practices.
 ---
 
