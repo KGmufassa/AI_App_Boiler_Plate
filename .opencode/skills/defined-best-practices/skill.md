@@ -10,7 +10,7 @@ compatibility: opencode
 
 This skill:
 
-1. Reads `stack-definition.md`
+1. Reads `Tech-Stack-Decision-Plan.md`
 2. Extracts each declared technology
 3. Researches best practices for each technology using an MCP server (e.g., Context7)
 4. Outputs one structured best-practices file per technology
@@ -22,7 +22,7 @@ If 5 technologies are detected → 5 output files are generated.
 
 # Hard Requirements
 
-- The file `stack-definition.md` must exist.
+- The file `Tech-Stack-Decision-Plan.md` must exist.
 - If not found → stop and report error.
 - Do not guess technologies.
 - Do not infer technologies not explicitly listed.
@@ -34,7 +34,8 @@ If 5 technologies are detected → 5 output files are generated.
 
 Locate:
 
-stack-definition.md
+`Build Plan/Active Plans/1-4 Stage Planning/Stage-1/markdown
+/Tech-Stack-Decision-Plan.md`
 
 Read file fully.
 
@@ -110,7 +111,7 @@ Report failure clearly.
 
 For each tech create:
 
-/docs/system/stack-best-practices/[tech-name].md
+./system/stack-best-practices/[tech-name].md
 
 Format:
 
@@ -136,7 +137,7 @@ If not applicable → state "Not Applicable".
 
 Create:
 
-/docs/stack-best-practices/overview.md
+/system/stack-best-practices/overview.md
 
 Include:
 

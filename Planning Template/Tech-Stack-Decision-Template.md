@@ -93,7 +93,30 @@ Freeze the selected stack by layer:
 
 ---
 
-## 6. Why This Stack Wins
+## 6. Confirmed Tech Stack (Final Snapshot)
+
+This section represents the **approved and implementation-ready stack**.  
+Only populate once the decision status is **approved or frozen**.
+
+- frontend (framework + language):
+- backend (framework + runtime):
+- database (primary):
+- cache:
+- queue or job system:
+- object storage:
+- authentication provider:
+- payments provider:
+- AI / ML services (if applicable):
+- hosting / cloud provider:
+- deployment model (serverless, containers, pods, etc):
+- CI/CD:
+- observability stack:
+- testing framework(s):
+- repo structure:
+
+---
+
+## 7. Why This Stack Wins
 
 Answer directly:
 
@@ -104,7 +127,7 @@ Answer directly:
 
 ---
 
-## 7. Rejected Alternatives
+## 8. Rejected Alternatives
 
 For each rejected option, note:
 
@@ -114,7 +137,7 @@ For each rejected option, note:
 
 ---
 
-## 8. Lock-In And Migration Risks
+## 9. Lock-In And Migration Risks
 
 - critical vendor dependencies:
 - hard-to-replace services:
@@ -124,7 +147,7 @@ For each rejected option, note:
 
 ---
 
-## 9. Environment Implications
+## 10. Environment Implications
 
 - local development requirements:
 - staging requirements:
@@ -135,11 +158,12 @@ For each rejected option, note:
 
 ---
 
-## 10. Freeze Rule
+## 11. Freeze Rule
 
 The stack is considered frozen when:
 
 - the selected stack is approved
+- confirmed tech stack section is fully populated
 - rejected alternatives are documented
 - local and production implications are known
 - the architecture plan and infrastructure plan align with the chosen stack
