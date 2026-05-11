@@ -48,7 +48,7 @@ Recommended workspace shape:
 - `Build Plan/Active Plans/status-report/json/state.json`
 - `Build Plan/Active Plans/<app-slug>/PRDs/`
 - `Build Plan/Active Plans/<app-slug>/1-4 Stage Planning/`
-- `Build Plan/Active Plans/<app-slug>/Slice Implementaion/`
+- `Build Plan/Active Plans/<app-slug>/Slice Implementation/`
 - `Build Plan/Active Plans/<app-slug>/Task List/`
 - `Build Plan/Active Plans/<app-slug>/Implementation Tickets/`
 

@@ -30,8 +30,8 @@ This skill generates slice implementation plans only.
 
 Markdown:
 
-- `Build Plan/Active Plans/Slice Implementaion/markdown/Slice-Implementation-Index.md`
-- `Build Plan/Active Plans/Slice Implementaion/markdown/Slice-<n>-<Outcome>-Implementation-Plan.md`
+- `Build Plan/Active Plans/Slice Implementation/markdown/Slice-Implementation-Index.md`
+- `Build Plan/Active Plans/Slice Implementation/markdown/Slice-<n>-<Outcome>-Implementation-Plan.md`
 
 JSON:
 

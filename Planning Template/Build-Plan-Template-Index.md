@@ -57,7 +57,7 @@ For each new app idea, create a planning stack with these layers:
 - `1-4 Stage Planning/Stage-3`
 - `1-4 Stage Planning/Stage-4`
 - `Planing Resources`
-- `Slice Implementaion`
+- `Slice Implementation`
 - `Task List`
 - `Implementation Tickets`
 

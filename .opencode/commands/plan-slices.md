@@ -31,12 +31,12 @@ Skill:
 
 Markdown:
 
-- `Build Plan/Active Plans/Slice Implementaion/markdown/Slice-Implementation-Index.md`
-- `Build Plan/Active Plans/Slice Implementaion/markdown/Slice-<n>-<Outcome>-Implementation-Plan.md`
+- `Build Plan/Active Plans/Slice Implementation/markdown/Slice-Implementation-Index.md`
+- `Build Plan/Active Plans/Slice Implementation/markdown/Slice-<n>-<Outcome>-Implementation-Plan.md`
 
 JSON:
 
-- `Build Plan/Active Plans/Slice Implementaion/json/Slice-Implementation-Index.json`
-- `Build Plan/Active Plans/Slice Implementaion/json/Slice-<n>-<Outcome>-Implementation-Plan.json`
+- `Build Plan/Active Plans/Slice Implementation/json/Slice-Implementation-Index.json`
+- `Build Plan/Active Plans/Slice Implementation/json/Slice-<n>-<Outcome>-Implementation-Plan.json`
 - updated `Build Plan/Active Plans/status-report/json/manifest.json`
 - updated `Build Plan/Active Plans/status-report/json/state.json`
